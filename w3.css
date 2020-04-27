@@ -45,22 +45,23 @@ dl{
 dt{
     padding-top:14px;
 }
+
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  text-align:center;
-  padding-left: 7%;
-  padding-top:25px;
-  margin-left: 7%;
+  width: auto;
+  margin-left: 10%;
+  padding-top: 25px;
 }
 
 /* Clear floats after image containers */
 .row::after {
-    padding-left: 40px;
+  padding-left: 40px;
   content: "";
   clear: both;
   display: table;
 }
+
 td {
 	width:15%;
 }
