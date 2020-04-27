@@ -48,20 +48,50 @@ dt{
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  padding: 2px;
   text-align:center;
-  padding-left: 12.5%;
+  padding-left: 7.5%;
   padding-top:25px;
+  margin-left: 7.5%;
 }
 
 /* Clear floats after image containers */
 .row::after {
+    padding-left: 40px;
   content: "";
   clear: both;
   display: table;
 }
 td {
 	width:15%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
 }
 
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
@@ -177,6 +207,7 @@ td {
 .w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
 .w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
 .w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.w3-padding-180{padding-top:180px!important;padding-bottom:32px!important}
 .w3-left{float:left!important}.w3-right{float:right!important}
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
 .w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
