@@ -46,7 +46,7 @@ dt{
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  width: 16%;
+  width: 14%;
   padding: 2px;
   text-align:center;
   margin: 25px;
