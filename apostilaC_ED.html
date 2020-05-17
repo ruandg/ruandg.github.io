@@ -110,21 +110,106 @@ int main() {
                     <div class="row" style="padding-left:15%;padding-right:15%">
                        <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> em python o escopo é delimitado usando identação. Em C o escopo é delimitado usando abertura e fechamento de chaves. Apesar de não ser obrigatório o uso de identação, uma vez que a delimitação do escopo é feita usando as chaves, é uma boa prática de programação (eu diria uma prática obrigatória) usar a identação, de modo a tornar o código mais legível e fácil de entender. </p>
                    </div>
+                  
+                  <br>
+                  <h2 class='apostila'>Variáveis</h2>
+                  <br>
+                  <br>
+                  
+                  	<p class="normal"> Uma variável representa um espaço na memória e serve para armazenar dados de um determinado tipo. Na linguagem C, todas as variáveis devem ser explicitamente declaradas antes de serem usadas. Para realizar uma declaração de uma variável na linguagem C deve-se informar o tipo da variável seguido do seu identificador. Existem algumas regras para a formação dos identificadores, por exemplo:<p>
+                      <ul>
+                       <li> não pode iniciar com número</li>
+                       <li> não pode conter espaços nem caracteres especiais (com exceção do <i>underline</i>)</li>
+                       <li> não pode ser uma palavra reservada da linguagem (ex: <code>int</code>, <code>include</code>, <code>void</code>, <code>return</code>, <code>if</code>, <code>while</code> etc). </li>
+                      </ul>
+     
+                       <p class="normal">Uma variável de determinado tipo apenas pode armazenar valores desse mesmo tipo, caso contrário haverá um erro de semântica no programa. Por exemplo, uma variável do tipo inteiro só pode armazenar valores numéricos inteiros no seu espaço de memória.</p>
+                       
+                       <div class="row" style="padding-left:15%;padding-right:15%">
+                           <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> python usa tipagem dinâmica; ou seja, as variáveis podem armazenar valores de diferentes tipos no decorrer do programa. C usa tipagem estática; ou seja, uma variável que é declarada como sendo de um tipo, permanece sendo do mesmo tipo dentro do escopo a que ela pertence. Além disso, em C é necessário declarar explicitamente o tipo da variável antes de começar a usa-la. Considere os exemplos de código a seguir para somar dois números inteiros, em python e em C, respectivamente. </p>
+                      </div> 
+                   
+                        <div class='codec' style="width: 320px; height:65px;">
+                        <code>
+<pre>a = 10
+b = 20
+soma = a+b
+print (soma)</pre>
+                        </code>
+                        </div>
+<br>
+                        <div class='codec' style="width: 320px; height: 120px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    int a = 10;
+    int b = 20;
+    int soma = a + b;
+    printf("%d",soma);
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>                                           
+                      
+     <br>
+                       <p class="normal">Em python o tipo de uma variável é definido de acordo com o tipo do valor que é atribuído a ela. Em C deve-se informar o tipo antes da definição do identificador da variável (<code>int</code> no exemplo). Após a declaração da variável com um determinado tipo, caso ocorra uma atribuição posteriormente de um valor de tipo diferente a essa variável, isso causará um erro em tempo de compilação. Em python não ocorre erro se um valor de tipo diferente for atribuído às variáveis "a" ou "b" posteriormente.</p>
+     
+                       <p class="normal">O exemplo de código a seguir mostra exemplos de variáveis sendo declaradas. Note que é opcional atribuir um valor inicial à variável após a declaração (no exemplo, apenas a variável <code>b</code> recebe um valor inicial junto da declaração). Também é possível declarar variáveis de um mesmo tipo, uma ao lado da outra, com os identificadores separados por vírgula (como foi o caso das variáveis <code>n1</code> e <code>n2</code>).</p>
+                        <div class='codec' style="width: 320px; height: 120px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    int a;
+    float b = 1.5;
+    char c;
+    int n1,n2;
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+                        
+                        <br>
+                        
+                       	<p class="normal">Um erro comumente cometido por iniciantes na linguagem C é a utilização de variáveis não inicializadas. Quando se declara uma variável, não se sabe o valor que está armazenado nela, a não ser que haja uma inicialização durante a declaração. Quando não existe uma inicialização, as variáveis armazenam no momento da declaração um valor que estava previamente na memória e que chamamos de "lixo". Por exemplo, considere o seguinte trecho de código:</p>
+                        <div class='codec' style="width: 320px; height: 70px;">
+                        <code>
+<pre>...
+int a, c;
+c = 10 + a;
+...
+</pre>
+                        </code>
+                        </div>   
+        <br>
+        
+                          <p class="normal">O valor de <code>a</code> não foi inicializado, portanto é um erro utilizarmos ele na atribuição à variável <code>c</code>. Como não inicializamos <code>a</code> no momento da declaração, ele pode conter qualquer valor. Portanto, é importante inicializar uma variável antes de utilizá-la, com o objetivo de evitar erros no programa. A inicialização poderia ser feita da seguinte forma:</p>
+                        <div class='codec' style="width: 320px; height: 70px;">
+                        <code>
+<pre>...
+int a = 5, c;
+c = 10 + a;
+...
+</pre>
+                        </code>
+                        </div>   
+        <br>
+        
+                           <p class="normal">Nesse caso é garantido que será atribuído o valor 15 (10 + a) à variável <code>c</code>, já que a variável <code>a</code> foi inicializada com o valor 5.</p>
+                  
+                  
+                 
+                   <br>
+                   <hr/><hr/>
+                   <div class="row" style="padding-left:5%;">
+                       <div class="alert alert-dark infop" role="alert">
+                         <a href="arrays.html" class="alert-link">Clique aqui</a> para acessar o Capítulo 2: Arrays.
+                       </div>
+                   </div>
         </div>
+        
     </div>
-</div>
-
-
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-10925343-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
 </BODY>
 </HTML>

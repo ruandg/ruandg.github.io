@@ -159,6 +159,16 @@ h4 {
   color: #c02060; /* purple like h2 */
 }
 
+ul > li{
+  text-align: left;
+  font-size:13px;
+  padding-right:5%;
+  padding-left:5%;
+}
+ul {
+    padding-right:5%;
+    padding-left:5%;
+}
 /* ///////////////////////////////////////////////////////////////////////
 Browsers make monospace font smaller than it should be.
 But different browsers shrink the monospace font differently.
