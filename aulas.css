@@ -81,12 +81,18 @@ BODY {
 */
 p {
     text-align: justify;
-    text-indent:4em;
+    text-indent:2em;
     font-size:14px;
     padding-right:3%;
     padding-left:3%;
-    padding-bottom: 1px;
 }
+p.infop {
+    text-indent:0em;
+    color: rgb(0,0,0);
+    padding-right:3%;
+    padding-left:3%;
+}
+
 h1.apostila {
    /*margin-top: 2.0em;
    margin-bottom: 1em;*/
@@ -105,6 +111,7 @@ h2.apostila  {
    text-align:left;
    font-size:20px;
    margin-bottom: 1px;
+   margin-left: 3%;
    color: #70b0ff; /* pale blue: was like that for a long time */
    color: #ff6633; /* orange */
    color: #ff8040; /* pale orange */
@@ -112,7 +119,7 @@ h2.apostila  {
    color: #5080ff; /* light blue */
    color: #de0051; /* bordeaux */
    color: #d04060; /* sort of magenta, as in the figures of arrays */
-   color: rgb(70,70,70); /* more towards purple */
+   color: rgb(30,30,30); /* more towards purple */
 /* padding: 0em 0.1em 0em 0.15em;*/
 /* background: #f0e0e0;*/
 /* background: #fdf6f6;*/
@@ -318,6 +325,7 @@ div.codec{
     margin: auto;
     box-sizing: content-box;  
     width: 320px;
+    height: 320px;
     padding: 10px;
     border: 5px solid gray;
     text-align:left;
