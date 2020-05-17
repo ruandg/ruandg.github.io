@@ -55,6 +55,16 @@ tt.good {
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 <div class="w3-row" >
     <div class="w3-row w3-light-gray w3-container" style="height:100%" id="about">
