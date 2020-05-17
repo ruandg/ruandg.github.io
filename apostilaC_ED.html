@@ -75,13 +75,13 @@ function myFunction() {
                 <br>
                 <p class="normal">	A linguagem C foi criada na década de 70, mas continua até hoje sendo muito utilizada, principalmente para desenvolver aplicações que requerem alto desempenho ou otimização do uso de recursos. A linguagem C, bem como a sua variante orientada a objetos (C++), é utilizada para o desenvolvimento de uma grande gama de aplicações, que vão desde softwares para controlar dispositivos embarcados (televisão, câmera digital, forno microondas etc), desenvolvimento de planilhas eletrônicas e processadores de texto, até sistemas operacionais. </p>
                 <p class="normal"> C é uma linguagem de alto nível, embora apresente características de baixo nível. Dessa forma, é necessário a utilização de um compilador, para que programas escritos em C sejam convertidos para linguagem de máquina. No sistema operacional Windows o compilador usualmente utilizado é o MinGW. No Linux usualmente se usa o <i>GNU Compiler Collection</i> (GCC), e nos sistemas operacionais BSD e Mac OS usualmente é utilizado o CLANG/LLVM.</p>
-                <p class="normal"> Antes de iniciarmos a demonstração de programas escritos em C, é importante comentar que a linguagem C é <i>case-sensitive</i>, ou seja, ela faz diferenciação entre letras maiúsculas e minúsculas. Dessa forma, os identificadores “A” e “a”, por exemplo, são diferentes.</p>
+                <p class="normal"> Antes de iniciarmos a demonstração de programas escritos em C, é importante comentar que a linguagem C é <i>case-sensitive</i>, ou seja, ela faz diferenciação entre letras maiúsculas e minúsculas. Dessa forma, os identificadores <code>A</code> e <code>a</code>, por exemplo, são diferentes.</p>
                 <br>
                 
                 <h2 class='apostila'>Primeiro Programa em C</h2> 
                 <br>
                 <br>
-                        <div class='codec' style="width: 320px; height: 80px;">
+                        <div class='w3-row codec' style="width: 220px; height: 80px;">
                         <code>
 <pre>#include &ltstdio.h&gt
 int main() {
@@ -129,7 +129,7 @@ int main() {
                            <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> python usa tipagem dinâmica; ou seja, as variáveis podem armazenar valores de diferentes tipos no decorrer do programa. C usa tipagem estática; ou seja, uma variável que é declarada como sendo de um tipo, permanece sendo do mesmo tipo dentro do escopo a que ela pertence. Além disso, em C é necessário declarar explicitamente o tipo da variável antes de começar a usa-la. Considere os exemplos de código a seguir para somar dois números inteiros, em python e em C, respectivamente. </p>
                       </div> 
                    
-                        <div class='codec' style="width: 320px; height:65px;">
+                        <div class='codec' style="width: 220px; height:65px;">
                         <code>
 <pre>a = 10
 b = 20
@@ -138,7 +138,7 @@ print (soma)</pre>
                         </code>
                         </div>
 <br>
-                        <div class='codec' style="width: 320px; height: 120px;">
+                        <div class='codec' style="width: 220px; height: 120px;">
                         <code>
 <pre>#include &ltstdio.h&gt
 int main() {
@@ -153,10 +153,10 @@ int main() {
                         </div>                                           
                       
      <br>
-                       <p class="normal">Em python o tipo de uma variável é definido de acordo com o tipo do valor que é atribuído a ela. Em C deve-se informar o tipo antes da definição do identificador da variável (<code>int</code> no exemplo). Após a declaração da variável com um determinado tipo, caso ocorra uma atribuição posteriormente de um valor de tipo diferente a essa variável, isso causará um erro em tempo de compilação. Em python não ocorre erro se um valor de tipo diferente for atribuído às variáveis "a" ou "b" posteriormente.</p>
+                       <p class="normal">Em python o tipo de uma variável é definido de acordo com o tipo do valor que é atribuído a ela. Em C deve-se informar o tipo antes da definição do identificador da variável (<code>int</code> no exemplo). Após a declaração da variável com um determinado tipo, caso ocorra uma atribuição posteriormente de um valor de tipo diferente a essa variável, isso causará um erro em tempo de compilação. Em python não ocorre erro se um valor de tipo diferente for atribuído às variáveis <code>a</code> ou <code>b</code> posteriormente.</p>
      
                        <p class="normal">O exemplo de código a seguir mostra exemplos de variáveis sendo declaradas. Note que é opcional atribuir um valor inicial à variável após a declaração (no exemplo, apenas a variável <code>b</code> recebe um valor inicial junto da declaração). Também é possível declarar variáveis de um mesmo tipo, uma ao lado da outra, com os identificadores separados por vírgula (como foi o caso das variáveis <code>n1</code> e <code>n2</code>).</p>
-                        <div class='codec' style="width: 320px; height: 120px;">
+                        <div class='codec' style="width: 220px; height: 120px;">
                         <code>
 <pre>#include &ltstdio.h&gt
 int main() {
@@ -173,7 +173,7 @@ int main() {
                         <br>
                         
                        	<p class="normal">Um erro comumente cometido por iniciantes na linguagem C é a utilização de variáveis não inicializadas. Quando se declara uma variável, não se sabe o valor que está armazenado nela, a não ser que haja uma inicialização durante a declaração. Quando não existe uma inicialização, as variáveis armazenam no momento da declaração um valor que estava previamente na memória e que chamamos de "lixo". Por exemplo, considere o seguinte trecho de código:</p>
-                        <div class='codec' style="width: 320px; height: 70px;">
+                        <div class='codec' style="width: 220px; height: 70px;">
                         <code>
 <pre>...
 int a, c;
@@ -185,7 +185,7 @@ c = 10 + a;
         <br>
         
                           <p class="normal">O valor de <code>a</code> não foi inicializado, portanto é um erro utilizarmos ele na atribuição à variável <code>c</code>. Como não inicializamos <code>a</code> no momento da declaração, ele pode conter qualquer valor. Portanto, é importante inicializar uma variável antes de utilizá-la, com o objetivo de evitar erros no programa. A inicialização poderia ser feita da seguinte forma:</p>
-                        <div class='codec' style="width: 320px; height: 70px;">
+                        <div class='codec' style="width: 220px; height: 70px;">
                         <code>
 <pre>...
 int a = 5, c;
@@ -202,7 +202,7 @@ c = 10 + a;
                  
                    <br>
                    <hr/><hr/>
-                   <div class="row" style="padding-left:5%;">
+                   <div class="row" style="padding-left:5%;paddin-right:5%">
                        <div class="alert alert-dark infop" role="alert">
                          <a href="arrays.html" class="alert-link">Clique aqui</a> para acessar o Capítulo 2: Arrays.
                        </div>
