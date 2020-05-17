@@ -81,16 +81,18 @@ BODY {
 */
 p {
     text-align: justify;
-    text-indent:2em;
     font-size:14px;
-    padding-right:3%;
-    padding-left:3%;
+    padding-right:5%;
+    padding-left:5%;
+}
+p.normal {
+    text-indent:2em;
 }
 p.infop {
     text-indent:0em;
     color: rgb(0,0,0);
-    padding-right:3%;
-    padding-left:3%;
+    padding-right:5%;
+    padding-left:5%;
 }
 
 h1.apostila {
@@ -111,7 +113,7 @@ h2.apostila  {
    text-align:left;
    font-size:20px;
    margin-bottom: 1px;
-   margin-left: 3%;
+   margin-left: 5%;
    color: #70b0ff; /* pale blue: was like that for a long time */
    color: #ff6633; /* orange */
    color: #ff8040; /* pale orange */
@@ -324,8 +326,6 @@ p.cvspy{
 div.codec{
     margin: auto;
     box-sizing: content-box;  
-    width: 320px;
-    height: 320px;
     padding: 10px;
     border: 5px solid gray;
     text-align:left;
