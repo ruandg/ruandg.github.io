@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"> 
+<TITLE>Algoritmos e Estruturas de Dados em C</TITLE>
+<META NAME="Author" CONTENT="Ruan Delgado Gomes">
+<META name="description" content="Apostila de C e Estruturas de Dados.">
+<META NAME="keywords" CONTENT="C, algoritmos, Estruturas de Dados, análise de algoritmos">
+<META name="language" content="Portuguese">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" href="aulas.css" type="text/css">
+<link rel="stylesheet" href="w3.css">
+<LINK rel="stylesheet" media="(max-width:1024px)" href="aulas-mobile.css" type="text/css">
+<LINK rel="stylesheet" media="print" href="aulas-print.css" type="text/css">
+<STYLE TYPE="text/css">
+tt.bad {
+/*color: #d00000;*/
+/*background: #ffe0e0;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: bold;
+  color: #b00000;
+}
+tt.good {
+/*color: #008000;*/
+/*background: #d0ffd0;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: bold;
+  color: #007000;
+}
+</STYLE>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10925343-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</HEAD>
+<BODY>
+
+
+<div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="#">Introdução à Linguagem C</a>
+    <a href="arrays">Arrays</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<div class="w3-row" >
+    <div class="w3-row w3-white w3-container" style="height:100%" id="about">
+        <div class="w3-padding-64 w3-center">
+
+            <h1 class='apostila'>Introdução à Linguagem C</h1>
+
+
+                <p>	A linguagem C foi criada na década de 70, mas continua até hoje sendo muito utilizada, principalmente para desenvolver aplicações que requerem alto desempenho ou otimização do uso de recursos. A linguagem C, bem como a sua variante orientada a objetos (C++), é utilizada para o desenvolvimento de uma grande gama de aplicações, que vão desde softwares para controlar dispositivos embarcados (televisão, câmera digital, forno microondas etc), desenvolvimento de planilhas eletrônicas e processadores de texto, até sistemas operacionais. C é uma linguagem de alto nível, embora apresente características de baixo nível. Dessa forma, é necessário a utilização de um compilador, para que programas escritos em C sejam convertidos para linguagem de máquina. No sistema operacional Windows o compilador usualmente utilizado é o MinGW. No Linux usualmente se usa o <i>GNU Compiler Collection</i> (GCC), e nos sistemas operacionais BSD e Mac OS usualmente é utilizado o CLANG/LLVM. Antes de iniciarmos a demonstração de programas escritos em C, é importante comentar que a linguagem C é <i>case-sensitive</i>, ou seja, ela faz diferenciação entre letras maiúsculas e minúsculas. Dessa forma, os identificadores “A” e “a”, por exemplo, são diferentes.</p>
+    
+                <h2 class='apostila'>Primeiro Programa em C</h2> 
+                        <div class='codec'>
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    printf("Oi Mundo!!");
+    return 0;
+}</pre>
+                        </code>
+                    </div>
+                
+                    
+	                <p>Esse programa é muito simples e tem como resultado a saída na tela da string “Alô Mundo!!”. Vamos agora analisar linha por linha o significado dos comandos presentes nesse programa em C.</p>
+	
+                    <p>Na primeira linha temos <code>#include &ltstdio.h&gt</code>, que serve para incluir a biblioteca <code>stdio.h</code>. Bibliotecas implementam um conjunto de funções que podem ser usadas pelos programas C. A biblioteca <code>stdio.h</code> implementa as funções de entrada e saída de dados padrão. Para usar funções de uma biblioteca é necessário incluí-la no seu programa usando a diretiva <code>#include</code>. Existem diversas bibliotecas de funções disponíveis em C, como a biblioteca de funções matemáticas (<code>math.h</code>), por exemplo.</p>
+
+                    <p class='cvspy'><strong>Diferença em relação a python:</strong> em python não é necessário importar pacotes para usar as funções <code>print()</code> e <code>input()</code>. Em C é obrigatório importar <code>stdio.h</code> para usar as funções de entrada padrão (<code>scanf()</code>) e saída padrão (<code>printf()</code>).</p>
+
+	                <p>Na segunda linha temos o início da função <code>main</code>, que é a função principal do programa escrito em C. O programa será executado seguindo a definição dos comandos escritos dentro dela. Ou seja, entre as chaves de abertura e fechamento (<code>{ e }</code>) que delimitam a função <code>main</code> deve-se colocar os comandos necessários para a resolução do problema. É importante notar que dentro da função <code>main</code> pode haver a chamada de outras funções, como por exemplo, a utilização da função <code>printf</code> para escrita de informações na saída padrão.</p>
+    
+	                <p>A partir da terceira linha temos as definições dos comandos que formam o programa descrito. Na terceira linha temos o primeiro comando do programa em questão. O comando é uma chamada à função <code>printf</code>, que coloca a string "Oi Mundo!!" na saída padrão (terminal de execução do programa).</p>
+
+                    <p class='cvspy'><strong>Diferença em relação a python:</strong> em python o final de uma linha de comando é definido pelo caractere que representa uma nova linha (inserido ao clicar enter). Em C é necessário informar explicitamente o final de uma linha de comando, usando ponto e vírgual (<code>;</code>). Note que não é necessário colocar <code>;</code> após abertura e fechamento de chaves e também não é necessário incluir <code>;</code> após o <code>#include</code>.</p>
+                     
+	                <p>Na quarta linha temos o comando <code>return 0</code>. O comando <code>return</code> força a saída da função e retorna algum valor (exceto se a função não tiver retorno [<code>void</code>]). Ou seja, quando um comando <code>return</code> é executado a função é encerrada, e o valor colocado após o <code>return</code> é retornado ("jogado para fora da função"). Por enquanto, tenham apenas em mente que o <code>return</code> marca o fim da função main e, consequentemente, o fim do programa.</p>
+    
+	                <p>Na quinta linha temos o fechamento da chave, que delimita o final do escopo da função <code>main</code>.</p>
+ 
+                    <p class='cvspy'><strong>Diferença em relação a python:</strong> em python o escopo é delimitado usando identação. Em C o escopo é delimitado usando abertura e fechamento de chaves. Apesar de não ser obrigatório o uso de identação, uma vez que a delimitação do escopo é feita usando as chaves, é uma boa prática de programação (eu diria uma prática obrigatória) usar a identação, de modo a tornar o código mais legível e fácil de entender. </p>
+
+         
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10925343-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</BODY>
+</HTML>
+
