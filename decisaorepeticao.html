@@ -1,1 +1,379 @@
-soon
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"> 
+<TITLE>Algoritmos e Estruturas de Dados em C</TITLE>
+<META NAME="Author" CONTENT="Ruan Delgado Gomes">
+<META name="description" content="Apostila de C e Estruturas de Dados.">
+<META NAME="keywords" CONTENT="C, algoritmos, Estruturas de Dados, análise de algoritmos">
+<META name="language" content="Portuguese">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" href="aulas.css" type="text/css">
+<link rel="stylesheet" href="w3.css">
+<LINK rel="stylesheet" media="(max-width:1024px)" href="aulas-mobile.css" type="text/css">
+<LINK rel="stylesheet" media="print" href="aulas-print.css" type="text/css">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+<STYLE TYPE="text/css">
+tt.bad {
+/*color: #d00000;*/
+/*background: #ffe0e0;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: bold;
+  color: #b00000;
+}
+tt.good {
+/*color: #008000;*/
+/*background: #d0ffd0;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: bold;
+  color: #007000;
+}
+</STYLE>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10925343-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</HEAD>
+<BODY>
+
+
+<div class="topnav" id="myTopnav" style="position:static;">
+    <a href="index.html" style="font-size:14px;">Home</a>
+    <a href="apostilaC_ED.html" style="font-size:10px;">Cap. 1 - Introdução à Linguagem C</a>
+    <a href="decisaorepeticao.html" style="font-size:10px;">Cap. 2 - Estruturas de Decisão e Repetição</a>
+    <a href="arrays.html" style="font-size:10px;">Capítulo 3: Arrays, Ponteiros e Strings</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<div class="w3-row" >
+    <div class="w3-row w3-white w3-container" style="height:100%" id="about">
+        <div class="w3-padding-64 w3-center">
+
+            <h1 class='apostila' style="color:darkblue;text-align:left;font-size:16px;"><strong>Prof. Ruan Delgado Gomes</strong><h1><h1 class='apostila' style="color:darkgreen;text-align:left;font-size:16px;"><em>GComPI - IFPB Campina Grande</em></h1>
+            <br>
+            <h1 class='apostila'>Estruturas de Decisão e Repetição</h1>
+         
+	            <br>                
+                <h2 class='apostila'>1 - Estruturas de Decisão</h2> 
+                <br>
+                 	<p class="normal">Uma estrutura de decisão permite decidir por executar ou não certo conjunto de comandos, de acordo com uma determinada condição. Em C existem duas formas de representar um processo de decisão, usando a estrutura <code>if - else</code> ou a estrutura <code>switch - case</code>.</p>
+
+                    <h3 class='apostila'>1.1 - Estrutura de decisão <code>if-else</code></h3> 
+              
+                 	<p class="normal">A palavra chave <code>if</code> é utilizada para codificar uma tomada de decisão em C com base em uma condição (expressão booleana). A seguir é exemplificado o uso do <code>if</code> em um algoritmo que verifica se um número inteiro lido da entrada é positivo.</p>
+                 
+                        <div class='w3-row codec' style="width: 320px; height: 140px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int n1;
+	scanf("%d",&n1);
+	if(n1 > 0) {
+		printf("valor positivo");	
+	}
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                 	<p class="normal">Após a palavra chave <code>if</code> deve-se colocar a condição entre parênteses. O escopo da estrutura de decisão pode ser delimitado usando abertura e fechamento de chaves. Isso quer dizer que todos os comandos que ficarem dentro do escopo da estrutura de decisão <code>if</code> apenas serão executados se a condição for verdadeira. O uso de abertura e fechamento de chaves pode ser dispensado quando existe apenas um comando dentro do escopo da decisão. Se houver dois ou mais comandos dentro do escopo é obrigatório o uso de abertura e fechamento de chaves. Lembrando que diferente de Python, em C o uso de identação não implica em definição de escopo.</p>
+
+                 	<p class="normal">A palavra chave <code>else</code> pode ser utilizada para executar um conjunto de comandos alternativos aos definidos dentro do <code>if</code>. Ou seja, caso a condição definida no <code>if</code> seja falsa, os comandos colocados dentro do escopo do <code>else</code> serão executados. No exemplo a seguir, é mostrado um código que verifica e informa ao usuário se um determinado número inteiro é positivo ou não, usando <code>if-else</code>.</p>
+                     
+                        <div class='w3-row codec' style="width: 390px; height: 190px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int n1;
+	scanf("%d",&n1);
+	if(n1 > 0) {
+		printf("valor positivo");	
+	}
+	else {
+		printf("valor negativo ou igual a zero");
+	}
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                 	<p class="normal">Ao usar o <code>if-else</code> como no exemplo mostrado, pode-se definir duas opções de fluxo de processamento no código. Caso a condição definida no <code>if</code> seja verdadeira, os comandos colocados dentro do seu escopo serão executados, caso contrário os comandos colocados dentro do escopo do <code>else</code> serão executados. Caso seja necessário definir mais de duas opções de fluxo de processamento, pode-se combinar as palavras chaves <code>else</code> e <code>if</code> para definir condições alternativas. Considere o exemplo a seguir, em que é verificado e informado ao usuário se um número é positivo, negativo ou igual a zero.</p>
+                        <div class='w3-row codec' style="width: 390px; height: 240px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int n1;
+	scanf("%d",&n1);
+	if(n1 > 0) {
+		printf("valor positivo");	
+	}
+	else if (n1 &lt 0){
+		printf("valor negativo");
+	}
+	else {
+		printf("valor igual a zero");
+	}
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+  
+                     <div style="padding-left:15%;padding-right:15%">
+                         <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> em Python existe uma palavra chave que representa a combinação de um <code>else</code> com um <code>if</code>, denominada <code>elif</code>. Em C essa palavra chave não existe.</p>
+                     </div>
+                   
+                    <h3 class='apostila'>1.2 - Estrutura de decisão <code>switch-case</code></h3> 
+
+                 	<p class="normal">Outra forma de modelar uma decisão é por meio da estrutura <code>switch-case</code>. Nesse tipo de estrutura de decisão, o fluxo de código a ser executado depende do valor de uma expressão que retorna um valor inteiro (ou um tipo com representação inteira direta). Cada valor de interesse da expressão é denominado de "caso" (<code>case</code>). Considere o exemplo de código a seguir, que informa ao usuário qual a opção escolhida, de acordo com o número digitado.</p>
+
+                        <div class='w3-row codec' style="width: 370px; height: 320px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main () {
+   int op;
+   printf("Digite o valor de op: ");
+   scanf("%d",&op);
+   switch(op) {
+      case 1 :
+         printf("Op. 1 escolhida\n" );
+         break;
+      case 2 :
+         printf("Op. 2 escolhida\n" );
+         break;
+      case 3 :
+         printf("Op. 3 escolhida\n" );
+         break;
+      default :
+         printf("Op. invalida\n" );
+   }
+   return 0;
+} 
+</pre>
+                        </code>
+                        </div>
+                    <br>
+                 	
+                    <p class="normal">A variável do tipo <code>int</code> denominada <code>op</code> é utilizada como a condição no <code>switch</code> e três casos (<code>case</code>) possíveis são definidos, que são executados quando a variável <code>op</code> possui os valores 1, 2 e 3, respectivamente. Caso um valor menor que 1 ou maior que 3 seja digitado, é informado ao usuário que a opção é inválida. O valor de cada caso deve ser sucessido por <code>:</code> e os comandos que fazem parte do caso devem ser colocados em seguida. Os comandos são então executados até que se encontre uma palavra chave <code>break</code>.</p>
+
+                 	<p class="normal">É importante notar que se não for colocado um <code>break</code>, todos os comandos posteriores ao <code>case</code> correspondente ao valor da condição serão executados, inclusive os comandos definidos nos casos posteriores. Por exemplo, caso seja retirado o <code>break</code> da linha 13 do exemplo mostrado, se o valor da variável <code>op</code> for igual a 2, a seguinte saída será mostrada na tela:</p>
+
+                        <div class='codec' style="width: 100px; height: 30px;border: 3px solid black;">
+                        <code>
+<pre>Op. 2 escolhida
+Op. 3 escolhida
+</pre>
+                        </code>
+                        </div>   
+        <br> 
+                 	<p class="normal">O caso <code>default</code> sempre deve ser definido (mesmo que sem comandos) e é executado quando o valor da variável de condição é diferente dos valores definidos em todos os <code>case</code>.</p>
+	
+
+    <h3 class="apostila" style="color:darkblue">Exercícios no URI</h3>
+
+      <p class="normal">Resolver os seguintes problemas no URI, usando a linguagem de programação C:</p>
+      <ul>
+     	<li> 1035 -- Teste de Seleção -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1035" target="_blank">link</a></li>
+     	<li> 1041 -- Coordenadas de um Ponto -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1041" target="_blank">link</a></li>
+     	<li> 1042 -- Sort Simples -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1042" target="_blank">link</a></li>
+     	<li> 1047 -- Tempo de Jogo com Minutos -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1047" target="_blank">link</a></li>
+     </ul>
+    
+    
+                <h2 class='apostila'>2 - Estruturas de Repetição</h2> 
+
+                 		<p class="normal">Durante a construção de algoritmos é comum aparecer casos em que um comando ou um determinado conjunto de comandos deve ser repetido uma certa quantidade de vezes ou repetidos de acordo com alguma condição. Portanto, é necessário algum mecanismo para se representar a repetição de comandos em um algoritmo. Na linguagem C existem três estruturas de repetição: <code>while</code>, <code>do while</code> e <code>for</code>.</p>
+	
+                 		<p class="normal">A primeira estrutura de repetição a ser apresentada é a estrutura <code>while</code>. Essa estrutura permite repetir a execução de um conjunto de comandos de acordo com alguma condição. Se a condição for verdadeira, o bloco de comandos definido dentro do escopo do <code>while</code> será executado. Ao final da execução de todos os comandos do escopo, a condição é avaliada novamente. Caso ela permaneça verdadeira, o bloco de comandos é executado novamente. Esse processo se repete até que a condição seja falsa, e nesse caso o bloco de comandos não é executado e o fluxo de execução do algoritmo continua a partir do primeiro comando depois do fechamento de chaves (<code>}</code>) do <code>while</code>. Caso a condição nunca fique falsa, o programa entrará em uma condição de <em>loop</em> infinito. Considere o exemplo a seguir, que usa uma estrutura de repetição <code>while</code>.</p>
+                        <div class='w3-row codec' style="width: 400px; height: 190px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int N;
+	printf("Digite um valor para N\n");
+	scanf("%d",&N);
+	while(N != 5) {
+		printf("Digite um novo valor para N\n");
+		scanf("%d",&N);
+	}
+	printf("Finalmente foi digitado 5\n");
+	return 0;	
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                 		<p class="normal">No código mostrado é lido um valor inteiro da entrada, que é atribuído à variável <code>N</code>. Após isso, são lidos novos valores para <code>N</code> de forma contínua enquanto o valor lido for diferente de 5. É importante notar que se o primeiro valor lido para <code>N</code> for igual a 5 (fora do <code>while</code>) nenhuma repetição é realizada. Dessa forma, a condição que define se uma repetição vai ocorrer ou não é a verificação se <code>N</code> é diferente de 5 (<code>N != 5</code>).</p>
+
+                 		<p class="normal">A estrutura de repetição <code>do while</code> é muito semelhante à estrutura <code>while</code>. A única diferença é que no <code>do while</code> o bloco de comandos no interior da estrutura de repetição é executado pelo menos uma vez. Apenas após uma iteração o teste da condição é realizado. Se a condição for verdadeira ocorre a repetição dos comandos. O exemplo a seguir mostra um algoritmo similar ao descrito no exemplo anterior, mas agora utilizando o <code>do while</code>.</p>
+                        <div class='w3-row codec' style="width: 400px; height: 160px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int N;
+	do {
+		printf("Digite um novo valor para N\n");
+		scanf("%d",&N);
+	} while(N != 5);
+	printf("Finalmente foi digitado 5\n");
+	return 0;	
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                 		<p class="normal">A terceira estrutura de repetição definida na linguagem C é a estrutura <code>for</code>. Em C a definição do <code>for</code> é muito mais flexível do que em Python, uma vez que a repetição também ocorre com base em uma condição e não com base em uma lista de valores a serem percorridos. No entanto, esse tipo de estrutura de repetição é geralmente a melhor escolha quando se sabe de antemão a quantidade de repetições a serem realizadas. O modo mais comum de uso da estrutura <code>for</code> é por meio do uso de uma variável de controle, que geralmente serve para contar a quantidade de repetições já realizadas e também é útil para construção de algoritmos que manipulam Arrays, como será melhor discutido em um capítulo posterior. O exemplo de código a seguir mostra como repetir 100 vezes um conjunto de comandos usando <code>for</code>.</p>
+                        <div class='w3-row codec' style="width: 380px; height: 130px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int i;
+	for(i = 0; i &lt 100; i++) {
+		printf("Valor de i: %d\n", i);
+	}
+	return 0;	
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+	
+                 	<p class="normal">Ao executar o programa gerado por esse código são mostradas 100 frases na saída, no formato mostrado a seguir.</p>
+
+                        <div class='codec' style="width: 100px; height: 130px;border: 3px solid black;">
+                        <code>
+<pre>Valor de i: 0
+Valor de i: 1
+Valor de i: 2
+Valor de i: 3
+Valor de i: 4
+Valor de i: 5
+...
+Valor de i: 99
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                 		<p class="normal">O código mostrado nesse exemplo é equivalente ao seguinte código que usa <code>while</code>:</p>
+
+                        <div class='w3-row codec' style="width: 380px; height: 140px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int i = 0;
+	while(i &lt 100) {
+		printf("Valor de i: %d\n", i);
+		i++;
+	}
+	return 0;	
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                 		<p class="normal">Em geral, tudo que se pode fazer com um <code>for</code>, é possível de se fazer com um <code>while</code>, e vice-versa. A estrutura <code>for</code>, entretanto, é mais compacta e mais fácil de ser usada em situações em que já se sabe a quantidade de repetições de antemão e quando é necessário o uso de uma variável de controle, que conta a quantidade de repetições.</p>
+
+                 		<p class="normal">Dentro do <code>for</code> são definidas três partes: a inicialização da variável de controle (<code>i = 0</code>), a condição de repetição (<code>i &lt 100</code>) e por último o incremento da variável de controle (<code>i++</code>). Nenhuma das três partes é obrigatória, mas é necessário colocar de toda forma os <code>;</code> dividindo as três partes [ex: <code>for( ; i &lt 100; )</code>]. Tanto a condição de repetição como o incremento podem ser escritos de forma diferente do que foi mostrado no exemplo. Por exemplo, pode-se definir que a variável de controle será incrementada de 2 em 2 (<code>i += 2</code>) ou mesmo que ela será decrementada. Também é possível inicializar e realizar incremento/decremento em mais de uma variável dentro da mesma estrutura <code>for</code>. Considere o exemplo a seguir, em que duas variáveis de controle (<code>i</code> e <code>k</code>) são inicializadas e incrementadas/decrementadas dentro do <code>for</code>.</p>
+
+                        <div class='w3-row codec' style="width: 340px; height: 160px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    int i;
+    int k;
+    for(i = 0, k = 99; i < 100; i++, k--) {
+    	printf("Valor de i: %d\n", i);
+    	printf("Valor de k: %d\n", k);
+    }
+    return 0;	
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+                 
+                 
+                 		<p class="normal">Ao executar o programa gerado por esse código são mostradas 200 frases na saída, no formato mostrado a seguir.</p>
+
+                        <div class='codec' style="width: 100px; height: 170px;border: 3px solid black;">
+                        <code>
+<pre>Valor de i: 0
+Valor de k: 99
+Valor de i: 1
+Valor de k: 98
+Valor de i: 2
+Valor de k: 97
+Valor de i: 3
+Valor de k: 96
+...
+Valor de i: 99
+valor de k: 0
+</pre>
+                        </code>
+                        </div>   
+        <br>
+	      
+                 <h3 class="apostila" style="color:darkblue">Exercícios no URI</h3>
+
+                   <p class="normal">Resolver os seguintes problemas no URI, usando a linguagem de programação C:</p>
+                   <ul>
+                  	<li> 1156 -- Sequência S II -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1156" target="_blank">link</a></li>
+                  	<li> 1157 -- Divisores I -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1157" target="_blank">link</a></li>
+                  	<li> 1158 -- Soma de Ímpares Consecutivos III -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1158" target="_blank">link</a></li>
+                  	<li> 1160 -- Crescimento Populacional -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1160" target="_blank">link</a></li>
+                  	<li> 1165 -- Número Primo -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1165" target="_blank">link</a></li>
+                  	<li> 2682 -- Detector de Falhas -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/2682" target="_blank">link</a></li>
+                  	<li> 2415 -- Consecutivos -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/2415" target="_blank">link</a></li>
+                  	<li> 1895 -- Jogo do Limite -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1895" target="_blank">link</a></li>
+                  </ul>
+                 
+                 <br>
+                 <hr/><hr/>
+                 <div class="row" style="padding-left:5%;paddin-right:5%">
+                     <div class="alert alert-dark infop" role="alert">
+                       <a href="apostilaC_ED.html" class="alert-link">Clique aqui</a> para voltar ao Capítulo 1: Introdução à Linguagem C.
+                     </div>
+                 </div>
+                   <div class="row" style="padding-left:5%;paddin-right:5%">
+                       <div class="alert alert-dark infop" role="alert">
+                         <a href="arrays.html" class="alert-link">Clique aqui</a> para acessar o Capítulo 3: Arrays, Ponteiros e Strings.
+                       </div>
+                   </div>
+        </div>
+        
+    </div>
+
+</BODY>
+</HTML>
+
