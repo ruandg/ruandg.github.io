@@ -109,6 +109,7 @@ h1.apostila {
    color: #000000;  /* darker blue more subdued */
 }
 h2.apostila  {
+    padding-bottom: 16px;
    text-decoration: underline;
    text-align:left;
    font-size:20px;
@@ -136,13 +137,43 @@ h2.bg {
    margin-right: 0em;
 }
 ********************/
-h3 {
-   margin-top: 2.0em;
-   margin-bottom: 0.0em;
-/* color: #5080ff; not bad */
+h3.apostila  {
+    padding-bottom: 16px;
+   text-decoration: underline;
+   text-align:left;
+   font-size:16px;
+   margin-bottom: 1px;
+   margin-left: 5%;
+   color: #70b0ff; /* pale blue: was like that for a long time */
+   color: #ff6633; /* orange */
+   color: #ff8040; /* pale orange */
+   color: #d05010; /* brown-orange */
+   color: #5080ff; /* light blue */
    color: #de0051; /* bordeaux */
-   color: #4080ff;
-   color: #3050c0; /* light blue */ 
+   color: #d04060; /* sort of magenta, as in the figures of arrays */
+   color: rgb(40,40,40); /* more towards purple */
+/* padding: 0em 0.1em 0em 0.15em;*/
+/* background: #f0e0e0;*/
+/* background: #fdf6f6;*/
+}
+h4.apostila  {
+   padding-bottom: 16px;
+   text-decoration: underline;
+   text-align:left;
+   font-size:16px;
+   margin-bottom: 1px;
+   margin-left: 5%;
+   color: #70b0ff; /* pale blue: was like that for a long time */
+   color: #ff6633; /* orange */
+   color: #ff8040; /* pale orange */
+   color: #d05010; /* brown-orange */
+   color: #5080ff; /* light blue */
+   color: #de0051; /* bordeaux */
+   color: #d04060; /* sort of magenta, as in the figures of arrays */
+   color: rgb(50,50,50); /* more towards purple */
+/* padding: 0em 0.1em 0em 0.15em;*/
+/* background: #f0e0e0;*/
+/* background: #fdf6f6;*/
 }
 /* nao funciona...
 h3.inline {
@@ -150,20 +181,10 @@ h3.inline {
    color: #3050c0;
 }
 */
-h4 {
-  margin-top: 1.5em;
-  margin-bottom: 0.0em;
-  margin-bottom: -0.5em; /* apend */
-  color: #1020a0; /* apend: dark blue */
-  color: #3050c0;
-  color: #c02060; /* purple like h2 */
-}
 
 ul > li{
   text-align: left;
   font-size:13px;
-  padding-right:5%;
-  padding-left:5%;
 }
 ul {
     padding-right:5%;

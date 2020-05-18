@@ -49,9 +49,9 @@ tt.good {
 
 
 <div class="topnav" id="myTopnav" style="position:static;">
-    <a href="index.html">Home</a>
-    <a href="#">Introdução à Linguagem C</a>
-    <a href="arrays">Arrays</a>
+    <a href="index.html" style="font-size:14px;">Home</a>
+    <a href="#" style="font-size:10px;">Cap. 1 - Introdução à Linguagem C</a>
+    <a href="decisaorepeticao.html" style="font-size:10px;">Cap. 2 - Estruturas de Decisão e Repetição</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
@@ -67,9 +67,11 @@ function myFunction() {
 </script>
 
 <div class="w3-row" >
-    <div class="w3-row w3-light-gray w3-container" style="height:100%" id="about">
+    <div class="w3-row w3-white w3-container" style="height:100%" id="about">
         <div class="w3-padding-64 w3-center">
 
+            <h1 class='apostila' style="color:darkblue;text-align:left;font-size:16px;"><strong>Prof. Ruan Delgado Gomes</strong><h1><h1 class='apostila' style="color:darkgreen;text-align:left;font-size:16px;"><em>GComPI - IFPB Campina Grande</em></h1>
+            <br>
             <h1 class='apostila'>Introdução à Linguagem C</h1>
 
                 <br>
@@ -78,9 +80,8 @@ function myFunction() {
                 <p class="normal"> Antes de iniciarmos a demonstração de programas escritos em C, é importante comentar que a linguagem C é <i>case-sensitive</i>, ou seja, ela faz diferenciação entre letras maiúsculas e minúsculas. Dessa forma, os identificadores <code>A</code> e <code>a</code>, por exemplo, são diferentes.</p>
                 <br>
                 
-                <h2 class='apostila'>Primeiro Programa em C</h2> 
-                <br>
-                <br>
+                <h2 class='apostila'>1 - Primeiro Programa em C</h2> 
+
                         <div class='w3-row codec' style="width: 220px; height: 80px;">
                         <code>
 <pre>#include &ltstdio.h&gt
@@ -95,26 +96,25 @@ int main() {
                     <p class="normal">Na primeira linha temos <code>#include &ltstdio.h&gt</code>, que serve para incluir a biblioteca <code>stdio.h</code>. Bibliotecas implementam um conjunto de funções que podem ser usadas pelos programas C. A biblioteca <code>stdio.h</code> implementa as funções de entrada e saída de dados padrão. Para usar funções de uma biblioteca é necessário incluí-la no seu programa usando a diretiva <code>#include</code>. Existem diversas bibliotecas de funções disponíveis em C, como a biblioteca de funções matemáticas (<code>math.h</code>), por exemplo.</p>
               
                     <div style="padding-left:15%;padding-right:15%">
-                        <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> em python não é necessário importar pacotes para usar as funções <code>print()</code> e <code>input()</code>. Em C é obrigatório importar <code>stdio.h</code> para usar as funções de entrada padrão (<code>scanf()</code>) e saída padrão (<code>printf()</code>).</p>
+                        <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> em Python não é necessário importar pacotes para usar as funções <code>print()</code> e <code>input()</code>. Em C é obrigatório importar <code>stdio.h</code> para usar as funções de entrada padrão (<code>scanf()</code>) e saída padrão (<code>printf()</code>).</p>
                     </div>
                     
 	                <p class="normal">Na segunda linha temos o início da função <code>main</code>, que é a função principal do programa escrito em C. O programa será executado seguindo a definição dos comandos escritos dentro dela. Ou seja, entre as chaves de abertura e fechamento (<code>{ e }</code>) que delimitam a função <code>main</code> deve-se colocar os comandos necessários para a resolução do problema. É importante notar que dentro da função <code>main</code> pode haver a chamada de outras funções, como por exemplo, a utilização da função <code>printf</code> para escrita de informações na saída padrão. </p>
                     <p class="normal">A partir da terceira linha temos as definições dos comandos que formam o programa descrito. Na terceira linha temos o primeiro comando do programa em questão. O comando é uma chamada à função <code>printf</code>, que coloca a string "Oi Mundo!!" na saída padrão (terminal de execução do programa).</p>
 
                     <div class="row" style="padding-left:15%;padding-right:15%">
-                        <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> em python o final de uma linha de comando é definido pelo caractere que representa uma nova linha (inserido ao clicar enter). Em C é necessário informar explicitamente o final de uma linha de comando, usando ponto e vírgual (<code>;</code>). Note que não é necessário colocar <code>;</code> após abertura e fechamento de chaves e também não é necessário incluir <code>;</code> após o <code>#include</code>.</p>
+                        <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> em Python o final de uma linha de comando é definido pelo caractere que representa uma nova linha (inserido ao clicar enter). Em C é necessário informar explicitamente o final de uma linha de comando, usando ponto e vírgual (<code>;</code>). Note que não é necessário colocar <code>;</code> após abertura e fechamento de chaves e também não é necessário incluir <code>;</code> após o <code>#include</code>.</p>
                      </div>
                      
 	                <p class="normal">Na quarta linha temos o comando <code>return 0</code>. O comando <code>return</code> força a saída da função e retorna algum valor (exceto se a função não tiver retorno [<code>void</code>]). Ou seja, quando um comando <code>return</code> é executado a função é encerrada, e o valor colocado após o <code>return</code> é retornado ("jogado para fora da função"). Por enquanto, tenham apenas em mente que o <code>return</code> marca o fim da função main e, consequentemente, o fim do programa. Na quinta linha temos o fechamento da chave, que delimita o final do escopo da função <code>main</code>.</p>
  
                     <div class="row" style="padding-left:15%;padding-right:15%">
-                       <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> em python o escopo é delimitado usando identação. Em C o escopo é delimitado usando abertura e fechamento de chaves. Apesar de não ser obrigatório o uso de identação, uma vez que a delimitação do escopo é feita usando as chaves, é uma boa prática de programação (eu diria uma prática obrigatória) usar a identação, de modo a tornar o código mais legível e fácil de entender. </p>
+                       <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> em Python o escopo é delimitado usando identação. Em C o escopo é delimitado usando abertura e fechamento de chaves. Apesar de não ser obrigatório o uso de identação, uma vez que a delimitação do escopo é feita usando as chaves, é uma boa prática de programação (eu diria uma prática obrigatória) usar a identação, de modo a tornar o código mais legível e fácil de entender. </p>
                    </div>
                   
                   <br>
-                  <h2 class='apostila'>Variáveis</h2>
-                  <br>
-                  <br>
+                  <h2 class='apostila'>2 - Variáveis</h2>
+
                   
                   	<p class="normal"> Uma variável representa um espaço na memória e serve para armazenar dados de um determinado tipo. Na linguagem C, todas as variáveis devem ser explicitamente declaradas antes de serem usadas. Para realizar uma declaração de uma variável na linguagem C deve-se informar o tipo da variável seguido do seu identificador. Existem algumas regras para a formação dos identificadores, por exemplo:<p>
                       <ul>
@@ -126,7 +126,7 @@ int main() {
                        <p class="normal">Uma variável de determinado tipo apenas pode armazenar valores desse mesmo tipo, caso contrário haverá um erro de semântica no programa. Por exemplo, uma variável do tipo inteiro só pode armazenar valores numéricos inteiros no seu espaço de memória.</p>
                        
                        <div class="row" style="padding-left:15%;padding-right:15%">
-                           <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a python:</strong> python usa tipagem dinâmica; ou seja, as variáveis podem armazenar valores de diferentes tipos no decorrer do programa. C usa tipagem estática; ou seja, uma variável que é declarada como sendo de um tipo, permanece sendo do mesmo tipo dentro do escopo a que ela pertence. Além disso, em C é necessário declarar explicitamente o tipo da variável antes de começar a usa-la. Considere os exemplos de código a seguir para somar dois números inteiros, em python e em C, respectivamente. </p>
+                           <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> Python usa tipagem dinâmica; ou seja, as variáveis podem armazenar valores de diferentes tipos no decorrer do programa. C usa tipagem estática; ou seja, uma variável que é declarada como sendo de um tipo, permanece sendo do mesmo tipo dentro do escopo a que ela pertence. Além disso, em C é necessário declarar explicitamente o tipo da variável antes de começar a usa-la. Considere os exemplos de código a seguir para somar dois números inteiros, em Python e em C, respectivamente. </p>
                       </div> 
                    
                         <div class='codec' style="width: 220px; height:65px;">
@@ -153,7 +153,7 @@ int main() {
                         </div>                                           
                       
      <br>
-                       <p class="normal">Em python o tipo de uma variável é definido de acordo com o tipo do valor que é atribuído a ela. Em C deve-se informar o tipo antes da definição do identificador da variável (<code>int</code> no exemplo). Após a declaração da variável com um determinado tipo, caso ocorra uma atribuição posteriormente de um valor de tipo diferente a essa variável, isso causará um erro em tempo de compilação. Em python não ocorre erro se um valor de tipo diferente for atribuído às variáveis <code>a</code> ou <code>b</code> posteriormente.</p>
+                       <p class="normal">Em Python o tipo de uma variável é definido de acordo com o tipo do valor que é atribuído a ela. Em C deve-se informar o tipo antes da definição do identificador da variável (<code>int</code> no exemplo). Após a declaração da variável com um determinado tipo, caso ocorra uma atribuição posteriormente de um valor de tipo diferente a essa variável, isso causará um erro em tempo de compilação. Em Python não ocorre erro se um valor de tipo diferente for atribuído às variáveis <code>a</code> ou <code>b</code> posteriormente.</p>
      
                        <p class="normal">O exemplo de código a seguir mostra exemplos de variáveis sendo declaradas. Note que é opcional atribuir um valor inicial à variável após a declaração (no exemplo, apenas a variável <code>b</code> recebe um valor inicial junto da declaração). Também é possível declarar variáveis de um mesmo tipo, uma ao lado da outra, com os identificadores separados por vírgula (como foi o caso das variáveis <code>n1</code> e <code>n2</code>).</p>
                         <div class='codec' style="width: 220px; height: 120px;">
@@ -200,11 +200,430 @@ c = 10 + a;
                   
                   
                  
+                 <h3 class="apostila"> 2.1 - Tipos Primitivos </h3>
+                 
+                     <p class="normal">Os tipos primitivos de uma linguagem de programação são os tipos básicos que fazem parte da definição da linguagem. À princípio apenas pode-se declarar variáveis dos tipos primitivos. No entanto, é possível criar novos tipos compostos, a partir da combinação de variáveis de tipos primitivos ou pela combinação de outras variáveis de tipos compostos. Mais na frente será mostrado como construir novos tipos compostos em C.</p>
+    
+                     <p class="normal">A Tabela a seguir mostra os tipos disponíveis em C para valores inteiros, o tamanho em memória das variáveis de cada tipo, o intervalo de valores admitidos para cada tipo, e também o código de formatação para cada um.</p>
+                 
+                 <table class="w3-table">
+                     <tr>
+                       <th>Tipo</th>
+                       <th>Tamanho em Memória Usual (bytes)</th>
+                       <th>Intervalo de Valores Usual</th>
+                       <th>Código de Formatação</th>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>char</code></td>
+                       <td>1</td>
+                       <td>-128 a 127</td>
+                       <td>%hhd (como número) ou<br>
+                           %c (como caractere)</td>
+                     </tr>
+                     <tr class="w3-light-gray">
+                       <td><code>unsigned char</code></td>
+                       <td>1</td>
+                       <td>0 a 255</td>
+                       <td>%hhd (como número)</td>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>short</code></td>
+                       <td>2</td>
+                       <td>-32768 a 32767</td>
+                       <td>%hd</td>
+                     </tr>
+                     <tr class="w3-light-gray">
+                       <td><code>unsigned short</code></td>
+                       <td>2</td>
+                       <td>0 a 65535</td>
+                       <td>%hu</td>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>int</code></td>
+                       <td>4</td>
+                       <td>-2147483648 a 2147483647</td>
+                       <td>%d</td>
+                     </tr>
+                     <tr class="w3-light-gray">
+                       <td><code>unsigned int</code></td>
+                       <td>4</td>
+                       <td>0 a 4294967296</td>
+                       <td>%u</td>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>long</code></td>
+                       <td>8</td>
+                       <td>-9223372036854775807 a 9223372036854775808</td>
+                       <td>%ld</td>
+                     </tr>
+                     <tr class="w3-light-gray">
+                       <td><code>unsigned long</code></td>
+                       <td>8</td>
+                       <td>0 a 1,844674407370955×10<sup>19</sup></td>
+                       <td>%lu</td>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>long long</code></td>
+                       <td>8</td>
+                       <td>-9223372036854775807 a 9223372036854775808</td>
+                       <td>%lld</td>
+                     </tr>
+                     <tr class="w3-light-gray">
+                       <td><code>unsigned long long</code></td>
+                       <td>8</td>
+                       <td>0 a 1,844674407370955×10<sup>19</sup></td>
+                       <td>%llu</td>
+                     </tr>
+                 </table>
+                 
+              	<p class="normal">Para armazenamento de valores inteiros, a linguagem C oferece cinco tipos primitivos: <code>char</code>, <code>short</code>, <code>int</code>, <code>long</code> e <code>long long</code>. O que muda de um tipo para o outro é a quantidade de bytes que uma variável irá ocupar na memória e, consequentemente, o intervalo de valores que é possível armazenar na variável. Por exemplo, variáveis do tipo <code>short</code> ocupam dois bytes (16 bits) na memória. Portanto, é possível armazenar 2<sup>16</sup> = 65536 valores diferentes na memória. Caso sejam admitidos valores positivos e negativos, metade dos possíveis valores são números negativos e a outra metade números positivos (além do zero). Portanto, variáveis do tipo <code>short</code> podem armazenar valores inteiros entre -32768 e 32767.</p>
+    
+                  <p class="normal">É importante notar que a quantidade de bytes associada a cada tipo depende da plataforma. Essa tabela considera um computador com processador Intel de 64 bits e o sistema operacional Mac OS 10.13. Por exemplo, em microcontroladores de 8 bits da família PIC o tipo <code>int</code> ocupa apenas dois bytes (ver página 149 do <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/50002053G.pdf">manual do compilador</a>). Portanto, caso sua aplicação seja sensível a essas diferenças, é importante verificar a definição das variáveis primitivas utilizada para a plataforma para qual a aplicação está sendo desenvolvida. O exemplo de código a seguir mostra como saber a quantidade de bytes ocupada em memória por um tipo de dados em C (usando a função <code>sizeof()</code>), o que pode ser útil para desenvolver programas genéricos e que se adaptem à plataforma sendo utilizada, em alguns casos. Compile e execute esse código em sua máquina para testar.</p>
+                        <div class='codec' style="width: 480px; height: 140px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    printf("Tamanho do char: %lu byte\n", sizeof(char));
+    printf("Tamanho do short: %lu bytes\n", sizeof(short));
+    printf("Tamanho do int: %lu bytes\n", sizeof(int));
+    printf("Tamanho do long: %lu bytes\n", sizeof(long));
+    printf("Tamanho do long long: %lu bytes\n", sizeof(long long));   
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+    
+                   <p class="normal">Também é importante notar que às vezes dois tipos diferentes podem ser equivalentes. Por exemplo, para a plataforma considerada para gerar a Tabela~\ref{tab:tiposinteiros} as variáveis dos tipos <code>long</code> e <code>long long</code> são equivalentes (ocupam 8 bytes). Em outras plataformas, uma variável do tipo <code>int</code> pode ser equivalente a uma variável do tipo <code>long</code>, ambas ocupando 4 bytes, enquanto que uma variável do tipo <code>long long</code> ocupa 8 bytes.</p>
+    
+                   <p class="normal">É possível definir variáveis que só consideram valores positivos, usando a palavra chave <code>unsigned</code> antes do tipo. Nesse caso, o intervalo de valores é dobrado para o lado positivo e os números negativos não são representados. Por exemplo, uma variável do tipo <code>unsigned short</code> pode assumir valores entre 0 e 65535.</p>
+    
+                   <p class="normal">Finalmente, os códigos de formatação mostrados na última coluna são úteis para a formatação dos dados de entrada e saída, como será melhor explicado mais na frente. Como exercício, observe os exemplos de código C mostrados até o momento e identifique como os códigos de formatação foram utilizados em conjunto com a função <code>printf()</code>. No exemplo de código que mostra como utilizar a função <code>sizeof()</code>, é utilizado o código de formatação <code>%lu</code> para representar o valor retornado pela função <code>sizeof()</code>. Isso quer dizer que a resposta fornecida por essa função é do tipo <code>unsigned long</code>.</p>
+    
+                   <p class="normal">Ao implementar um algoritmo para resolver algum problema deve-se ficar atento às restrições sobre os valores que podem ser atribuídos às variáveis. Por exemplo, o valor máximo que uma variável do tipo <code>int</code> pode armazenar é igual a 2<sup>31</sup>-1 = 2147483647. Tendo isso em mente, analise o trecho de código a seguir.</p>
+                        <div class='codec' style="width: 200px; height: 120px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    long a = 3000000000;
+    int b = 10;
+    int soma = a + b;
+    printf("%d", soma);
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+    
+                   <p class="normal">Ao executar o programa gerado a partir desse código, foi colocado na saída o valor -1294967286. Isso ocorreu pois os valores atribuídos às variáveis <code>a</code> e <code>soma</code> são maiores que o valor máximo permitido para variáveis do tipo <code>int</code>. Isso é chamado de <em>overflow</em>. Esse tipo de erro é muito perigoso, uma vez que o código compila e executa, mas o resultado obtido é diferente do esperado. Além disso, é possível que um programa funcione para vários casos de teste (que não chegam a provocar <em>overflow</em>), o que pode dar a falsa impressão de que o código está correto. Troque os tipos das variáveis <code>a</code> e <code>soma</code> por <code>long long</code> nesse exemplo de código e execute novamente para ver o resultado obtido. Lembre de modificar o código de formatação na função <code>printf()</code>.</p>    
+  
+                  <div class="row" style="padding-left:15%;padding-right:15%">
+                      <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> no Python 2 também existem os tipos <code>int</code> e <code>long</code> (no Python 3 essa diferença desaparece), mas não é necessário explicitar se uma determinada variável é de um desses tipos. Dependendo do valor atribuído à variável, o tipo dela é alterado pelo interpretador. Caso os valores fiquem abaixo do limite definido para variáveis do tipo <code>int</code> (esse valor é específico da plataforma em uso), as operações com os valores inteiros são realizadas utilizando as instruções para operações aritméticas disponibilizadas pelo processador. Para valores que excedam o limite máximo para variáveis <code>int</code>, o interpretador precisa tratar as operações via software. À princípio, não existe limite para o tamanho dos valores inteiros usados em Python, no entanto para valores muito grandes o tempo de processamento pode ser alto, devido à necessidade de realizar processamento em software para as operações aritméticas.</p>
+                  </div>
+                 
+                 <br>
+                 <h4 class="apostila">2.1.1 - Sobre o tipo <code>char</code></h4>
+    
+                       <p class="normal">Variáveis do tipo <code>char</code> são mais comumente utilizadas para armazenar caracteres. Os caracteres em C são representados utilizando aspas simples (<code>'</code>), por exemplo: <code>'a'</code>, <code>'2'</code>,<code>'#'</code>. Existe uma tabela chamada <em>Tabela ASCII</em> que faz uma associação de todos os caracteres dessa tabela com um valor numérico correspondente. Dessa forma, uma variável do tipo <code>char</code> pode armazenar o valor inteiro correspondente a um determinado caractere, seguindo a tabela. Por exemplo, o caracter <code>'A'</code> é representado pelo valor 65 na tabela ASCII. Assim, uma variável do tipo <code>char</code> que contenha o caractere <code>'A'</code>, na realidade armazena em memória o valor inteiro 65. O exemplo de código a seguir mostra como é possível armazenar um caractere em uma variável do tipo <code>char</code> e como utilizar o <code>printf()</code> para colocar na saída o caractere armazenado pela variável, bem como o valor numérico correspondente. Como demonstrado na Tabela que lista os tipos inteiros, o padrão de codificação para a variável do tipo <code>char</code> no modo numérico é <code>%hhd</code>, enquanto que no modo caractere é <code>%c</code>.</p>
+                        <div class='codec' style="width: 380px; height: 140px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+    char c1 = 'C';
+    char c2 = 'G';
+    printf ("IFPB - %c%c\n", c1, c2);
+    printf ("Valores inteiros: %hhd %hhd\n", c1,c2);
+    printf ("%d\n", '#');
+    return 0;
+}
+
+</pre>
+                        </code>
+                        </div>   
+        <br>
+     
+                      <p class="normal"> Ao ser executado, o programa gerado por esse código coloca as seguintes infomações na saída:</p>
+                      
+                        <div class='codec' style="width: 260px; height: 30px;border: 3px solid black;">
+                        <code>
+<pre>IFPB - CG
+Valores inteiros: 67 71
+</pre>
+                        </code>
+                        </div>   
+        <br>     
+                
+                      <p class="normal"> Na primeira linha os conteúdos das variáveis <code>c1</code> e <code>c2</code> são combinados para compor a palavra <code>''IFPB - CG''</code>, enquanto que na segunda linha os valores inteiros correspondentes aos caracteres <code>'C'</code> e <code>'G'</code> na tabela ASCII são mostrados (67 e 71).</p>
+     
+                      <p class="normal"> É importante notar que devido à ampliação do conjunto de caracteres que podem ser representados, o tipo <code>char</code> não é mais capaz de representar todos os caracteres existentes, mas continua sendo usado para representar o alfabeto ASCII. No entanto, grande parte dos caracteres que estamos habituados a utilizar nas línguas portuguesa e inglesa podem ser representados por ela. Para se informar mais sobre a representação de outros caracteres, pesquise sobre Tabela <em>Unicode</em>. </p>
+     
+                      <p class="normal"> A linguagem C  oferece três tipos básicos para representação de números de ponto flutuante: <code>float</code>, <code>double</code> e <code>long double</code>. A diferença entre elas também é a quantidade de bytes que uma variável ocupa e, consequentemente, o intervalo de valores que pode ser armazenado, bem como a precisão.  A Tabela a seguir mostra os tipos disponíveis em C para valores reais, o tamanho em memória das variáveis de cada tipo, o intervalo de valores admitidos para cada tipo, e também o código de formatação para cada um. Essa tabela também foi gerada considerando a mesma plataforma usada para gerar os dados da tabela que lista os tipos inteiros. Portanto, em outras plataformas as definições com relação à quantidade de bytes das variáveis de cada tipo podem variar.</p>
+
+                 <table class="w3-table">
+                     <tr>
+                       <th>Tipo</th>
+                       <th>Tamanho em Memória Usual (bytes)</th>
+                       <th>Intervalo de Valores Usual</th>
+                       <th>Código de Formatação</th>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>float</code></td>
+                       <td>4</td>
+                       <td>1,175494 × 10<sup>−38</sup> a 3,402823 × 10<sup>38</sup></td>
+                       <td>%f (notação normal) ou
+                           %e (notação científica)</td>
+                     </tr>
+                     <tr class="w3-light-gray">
+                       <td><code>double</code></td>
+                       <td>8</td>
+                       <td>2,225074 × 10<sup>−308</sup> a 1,797693 × 10<sup>308</sup></td>
+                       <td>%lf (notação normal) ou
+                           %le (notação científica)</td>
+                     </tr>
+                     <tr class="w3-light-blue">
+                       <td><code>long double</code></td>
+                       <td>16</td>
+                       <td>3,362103 × 10<sup>−4932</sup> a 1,189731 × 10<sup>4932</sup></td>
+                       <td>%Lf (notação normal) ou
+                           %Le (notação científica)</td>
+                     </tr>
+                 </table>
+    
+
+                 	 <p class="normal">De forma similar como discutido para os números inteiros, antes de decidir qual tipo de variável utilizar para valores reais, deve-se analisar as características dos valores que precisam ser armazenados e processados pela sua aplicação. Em geral, quando uso de memória não é uma forte restrição, pode-se utilizar <code>double</code> para conseguir uma boa precisão. No entanto, caso a aplicação possua requisitos críticos de memória (como pode ocorrer em muitos sistemas embarcados), deve-se avaliar se o uso de variáveis <code>float</code> atendem aos requisitos de precisão dos cálculos que serão realizados, uma vez que variáveis <code>float</code> ocupam a metade do espaço em memória ocupado por uma variável do tipo <code>double</code>. </p>
+                         
+                     <p class="normal">Outra alternativa é usar variáveis do tipo <code>float</code> para armazenar os dados e utilizar variáveis do tipo <code>double</code> para realizar os cálculos. Nesse último cenário pode-se minimizar as perdas de precisão durante a realização de cálculos. Isso é especialmente útil quando se realiza uma grande quantidade de cálculos sucessivos utilizando valores reais como operandos. O tempo de processamento para variáveis com maior precisão também é maior, mas nem sempre a diferença será significante. O tipo <code>long double</code> é o que apresenta maior precisão e deve ser usado em aplicações que requeiram uma precisão muito grande. Na grande maioria dos casos o uso de variáveis <code>double</code> resolve o problema.</p>
+
+                 	 <p class="normal">Para entender melhor as diferenças, deve-se levar em consideração que variáveis do tipo <code>float</code> possuem aproximadamente 7 dígitos de precisão, variáveis do tipo <code>double</code> possuem aproximadamente 16 dígitos de precisão e variáveis do tipo <code>long double</code> possuem aproximadamente 34 dígitos de precisão. Em resumo, caso o sistema não possua requisitos críticos de memória ou precisão, usar <code>double</code> é a melhor opção. Caso o sistema possua requisitos críticos de memória, deve-se avaliar a possibilidade de utilizar variáveis do tipo <code>float</code>, ao menos para armazenamento. Caso a aplicação apresente requisitos críticos de precisão, deve-se avaliar se é necessário utilizar <code>long double</code>, ao menos durante o processamento dos dados (e manter <code>double</code> para armazenamento).</p>
+
+                 	 <p class="normal">String e booleano não possuem representação direta na linguagem C por meio de tipos primitivos. Em C, uma string é representada por um conjunto (array) de caracteres e um booleano pode ser representado por uma variável inteira. Valores inteiros diferentes de 0 equivalem ao valor booleano <em>True</em> e o valor 0 equivale ao valor booleano <em>False</em>. Arrays e strings (arrays de <code>char</code>) serão estudados em mais detalhes no Capítulo 3.</p>
+    
+    
+    
+                 <br>
+                 <h2 class="apostila">3 - Entrada e Saída</h2>
+    
+                     <p class="normal">Nessa seção serão apresentados mais detalhes sobre a função de saída padrão (<code>printf()</code>) e será apresentada a função de entrada padrão (<code>scanf()</code>).</code>
+
+                     A função <code>printf()</code> permite que um conjunto de valores (constantes, variáveis ou resultados de expressões) sejam exibidos de acordo com um determinado formato. O formato geral da função <code>printf()</code> é:
+                        <div class='codec' style="width: 260px; height: 18px;border: 3px solid black;">
+                        <code>
+<pre>printf(&ltformato&gt, &ltlista de valores&gt);
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                      <p class="normal">O primeiro parâmetro da função <code>printf()</code> (o formato) contém a cadeia de caracteres que será exibida na tela. Após o primeiro parâmetro, deve-se colocar uma lista de 0 ou mais valores (separados por vírgula). No parâmetro <em>formato</em> são definidos os locais dentro da cadeia de caracteres onde os valores que fazem parte da lista de valores passados como parâmetro (constantes/variáveis/resultados de expressões) serão apresentados. Para definir os locais onde os valores aparecem dentro da cadeia de caracteres, deve-se utilizar os códigos de formatação das variáveis, de acordo com os seus tipos (os códigos de formatação das variáveis primitivas foram mostrados nas tabelas apresentadas anteriormente, que listam os tipos de variáveis inteiras e reais). Considere o exemplo a seguir:</p>
+                      
+                        <div class='codec' style="width: 480px; height: 110px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int idade = 35;
+	float altura = 1.8;
+	printf("Tenho %d anos e %f metros de altura", idade, altura);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                 <p class="normal"> Neste exemplo, são colocados dois valores na saída (um do tipo <code>int</code> e um do tipo <code>float</code>). No primeiro parâmetro da função <code>printf()</code> é informado o formato da saída, que define a frase que será colocada na saída e os locais onde irão aparecer os dois valores (das variáveis <code>idade</code> e <code>altura</code>), que são informados nos parâmetros seguintes. Ao executar o programa gerado a partir desse código, é obtida a seguinte saída:</p>
+                        <div class='codec' style="width: 260px; height: 18px;border: 3px solid black;">
+                        <code>
+<pre>Tenho 35 anos e 1.800000 de altura
+</pre>
+                        </code>
+                        </div>   
+        <br> 
+              
+
+                 	 <p class="normal">No local onde foi colocado o <code>%d</code> aparece o valor que estava dentro da variável <code>idade</code> e no local onde foi colocado o <code>%f</code> aparece o valor que estava dentro da variável <code>altura</code>. Para limitar a quantidade de casas decimais dos valores reais na saída, pode-se escrever o código de formatação na forma: <code>%.&ltqtd-digitos&gtf</code>, em que <code>&ltqtd-digitos&gt</code> deve ser substituído pela quantidade de casas decimais que devem aparecer, como mostrado no exemplo de código a seguir, em que o valor da altura aparece na saída com apenas duas casas decimais. No exemplo a seguir também foi colocado um caractere <code>'\n'</code> ao final da string que define o formato da saída. Esse caractere serve para pular uma linha.</p>
+                        <div class='codec' style="width: 500px; height: 110px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int idade = 35;
+	float altura = 1.8;
+	printf("Tenho %d anos e %.2f metros de altura\n", idade, altura);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                 	 <p class="normal">A função de entrada padrão de C funciona de forma semelhante à função de saída. No primeiro parâmetro deve-se informar o formato da entrada, indicando os tipos dos valores que serão lidos (por meio dos códigos de formatação). Após o primeiro parâmetro, deve-se colocar os endereços das variáveis que receberão os dados da entrada. O conceito de <em>endereço de variável</em> será melhor explorado no Capítulo que trata de ponteiros. Neste momento, apenas lembre que o endereço de uma variável é obtido colocando um <code>&</code> antes do identificador da variável. Considere o exemplo a seguir:</p>
+                        <div class='codec' style="width: 500px; height: 140px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int idade;
+	float altura;
+	scanf("%d", &idade);
+	scanf("%f", &altura);	
+	printf("Tenho %d anos e %.2f metros de altura", idade, altura);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                 	 <p class="normal">Nesse exemplo, os valores de <code>idade</code> e <code>altura</code> são lidos da entrada usando a função <code>scanf()</code>. Para a variável <code>idade</code> foi usado o código de formatação <code>%d</code> (variável do tipo <code>int</code>) e para a variável <code>altura</code> foi usado o código de formatação <code>%f</code> (variável do tipo <code>float</code>). Note que o segundo parâmetro da função <code>scanf()</code> é o endereço das variáveis que receberão os valores lidos da entrada (<code>&idade e &altura</code>). É importante ter atenção a esse detalhe, pois caso não seja colocado o <code>&</code> antes do nome da variável, o código compila normalmente (provavelmente será mostrado apenas um <em>warning</em>), mas ocorre um erro durante a execução.</p>
+
+                   <p class="normal">O código a seguir mostra um exemplo de como declarar uma string em C, como ler da entrada a string e como colocar na saída o conteúdo da string. Existe um código de formatação para string, que é o <code>%s</code>.</p>
+                        <div class='codec' style="width: 330px; height: 125px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	char nome[100];
+	printf ("Digite seu nome: ");
+	scanf("%s", nome);
+	printf("Nome: %s", nome);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+     
+                 	 <p class="normal">Nesse exemplo a variável <code>nome</code> é um array (o conceito equivalente em Python seria <em>lista</em>) de 100 posições do tipo <code>char</code>. Essa variável pode armazenar strings de até 99 caracteres, uma vez que um caractere deve ser reservado para indicar o final da string (esses detalhes serão melhor explorados no Capítulo 3). Por enquanto, é apenas importante aprender a declarar strings como um array de <code>char</code>, ler da entrada strings e colocar na saída o conteúdo de uma string. Um diferença importante da string com relação às variáveis primitivas é que na função <code>scanf()</code> não é necessário usar o <code>&</code> antes do nome da variável. O motivo disso também será entendido na seção que descreve arrays e strings em mais detalhes. Nesse momento, apenas lembre que não é necessário colocar o <code>&</code> no <code>scanf()</code> para ler strings, mas é necessário colocar o <code>&</code> para ler variáveis dos tipos primitivos.</p>
+                 <br>
+                 <h2 class="apostila">3 - Operadores Aritméticos</h2>
+
+                 	 <p class="normal">Não há muita diferença entre os operadores aritméticos básicos utilizados em C e em Python. Em C existem os seguintes operadores aritméticos: soma (<code>+</code>), subtração (<code>-</code>), multiplicação (<code>*</code>), divisão (<code>/</code>) e resto da divisão (<code>%</code>). Os operadores de multiplicação, divisão e resto de divisão possuem maior precedência em relação aos operadores de soma e subtração. Para operadores que possuem a mesma precedência, a avaliação da expressão ocorre da esquerda para a direita. Também é possível utilizar parênteses para forçar precedência entre os operadores.</p>
+
+                 	 <p class="normal">Em C também são definidos operadores de incremento (<code>++</code>), de decremento (<code>--</code>) e operadores de atribuição. O exemplo de código a seguir exemplifica o uso desses operadores.</p>
+                        <div class='codec' style="width: 330px; height: 250px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int n1 = 0;
+	int n2 = 2;
+	
+	n1++; //equivale a n1 = n1 + 1;
+	n2--; //equivale a n2 = n2 - 1;
+
+	n1 += n2; //equivale a n1 = n1 + n2;
+	n1 /= n2; //equivale a n1 = n1/n2;
+	n2 *= 3; //equivale a n2 = n2*3;
+	n2 %= 2; //equivale a n2 = n2%2;
+
+	printf("N1: %d\nN2: %d\n", n1,n2);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                 	 <p class="normal">Ao executar o programa gerado por esse código, obtemos a saída mostrada a seguir. Como exercício, simule o código no papel para verificar como esse resultado foi obtido.</p>
+
+                        <div class='codec' style="width: 40px; height: 28px;border: 3px solid black;">
+                        <code>
+<pre>N1: 2
+N2: 1
+</pre>
+                        </code>
+                        </div>   
+        <br> 
+                 	 <p class="normal">Os operadores de incremento e decremento também podem ser usados antes da variável (ex: <code>--n1</code>). Quando utilizados de forma isolada (é o caso do exemplo de código mostrado anteriormente), não faz diferença colocar o operador antes ou depois da variável, mas quando utilizado dentro de uma expressão maior, a posição do operador de incremento influencia no resultado final obtido. Mais especificamente, quando colocado antes da variável, primeiro é realizado o incremento/decremento e só após isso o valor da variável é utilizado na expressão. Quando o operador é colocado após a variável, o valor atual da variável é utilizado na expressão e só depois é realizado o incremento/decremento. Para entender melhor, considere o exemplo de código a seguir:</p>
+                        <div class='codec' style="width: 320px; height: 190px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	int n = 2;
+	int a,b;
+	
+	
+	a = n++ - 1;
+	b = ++n - 1;
+	
+	printf("a: %d\nb: %d\n", a,b);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                 	 <p class="normal">O programa gerado por esse código coloca na saída o seguinte:</p>
+
+                        <div class='codec' style="width: 40px; height: 28px;border: 3px solid black;">
+                        <code>
+<pre>a: 1
+b: 3
+</pre>
+                        </code>
+                        </div>   
+        <br> 
+
+                  <p class="normal">Na expressão da linha 9 o incremento à variável <code>n</code> é feito após a subtração. Logo, ao final dessa expressão a variável <code>a</code> recebe o valor 1 (<code>2 - 1</code>) e depois a variável <code>n</code> passa a armazenar o valor 3. Na expressão da linha 10 o incremento à variável <code>n</code> ocorre antes. Logo, primeiro <code>n</code> passa a armazenar o valor 4 e depois o resto da expressão é analisada, o que culmina na atribuição do valor 3 à variável <code>b</code>.</p>
+
+
+
+                <h3 class="apostila" style="color:darkblue">Exercícios no URI</h3>
+
+                  <p class="normal">Resolver os seguintes problemas no URI, usando a linguagem de programação C:</p>
+                  <ul>
+                 	<li> 1009 -- Salário com Bônus -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1009" target="_blank">link</a></li>
+                 	<li> 1015 -- Distância Entre Dois Pontos -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1015" target="_blank">link</a></li>
+                 	<li> 1017 -- Gasto de Combustível -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1017" target="_blank">link</a></li>
+                 	<li> 1019 -- Conversão de Tempo -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1019" target="_blank">link</a></li>
+                 	<li> 1018 -- Cédulas -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1018" target="_blank">link</a></li>
+                 </ul>
+
+                 <br>
+                 <h2 class="apostila">4 - Operadores Relacionais e Lógicos</h2>
+
+                 	 <p class="normal">Os operadores relacionais são usados para comparar dois valores. A linguagem C oferece os seguintes operadores relacionais (iguais aos usados em Python): <code>&lt</code>  (menor que), <code>&gt</code> (maior que), <code>&lt=</code> (menor ou igual a), <code>&gt=</code> (maior ou igual a), <code>==</code> (igual a), <code>!=</code> (diferente de).</p>
+
+                 	 <p class="normal">Os operadores relacionais mostrados servem para comparar dois valores. O resultado produzido por um operador relacional é 0 ou 1. Como em C não existe o tipo booleano, são usados inteiros para representar valores lógicos. O valor 0 corresponde a <em>False</em> e qualquer valor diferente de zero corresponde a <em>True</em>.</p>
+
+                 	 <p class="normal">s operadores lógicos servem para combinar expressões relacionais e valores booleanos. A Tabela a seguir mostra os operadores lógicos existentes na linguagem C, bem como o operador equivalente em Python, para fins de comparação.</p>
+                     
+                     <table class="w3-table">
+                         <tr>
+                           <th>Operadores Lógicos</th>
+                           <th>Em C</th>
+                           <th>Em Python</th>
+                         </tr>
+                         <tr class="w3-light-blue">
+                           <td>não</td>
+                           <td><code>!</code></td>
+                           <td><code>not</code></td>
+                         </tr>
+                         <tr class="w3-light-gray">
+                           <td>e</td>
+                           <td><code>&&</code></td>
+                           <td><code>and</code></td>
+                         </tr>
+                         <tr class="w3-light-blue">
+                           <td>ou</td>
+                           <td><code>||</code></td>
+                           <td><code>or</code></td>
+                         </tr>
+                     </table>
+    
+                 	 <p class="normal">É importante notar que os operadores lógicos <code>e</code> e <code>ou</code>} são representados por dois caracteres (<code>&& e ||</code>). Em C existem operadores para manipular valores em nível de bit, chamados de operadores <em>bitwise</em>. No caso dos operadores <em>bitwise</em> é usado apenas um caractere para o <code>e</code> e para o <code>ou</code> (<code>&</code> e <code>|</code>). O uso de operadores <em>bitwise</em> está fora do escopo desta seção, mas é importante conhecer a diferença de sintaxe entre eles e os operadores lógicos. Alguns exemplos de uso dos operadores lógicos e relacionais serão mostrados no próximo Capítulo, que apresenta as estruturas de decisão e de repetição. </p>
+                     
+                     <div class="row" style="padding-left:15%;padding-right:15%">
+                         <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> diferente de C, em Python as expressões do tipo <code>a &lt b &lt c</code> possuem a interpretação que é convencional na matemática. Em C, não é possível usar um mesmo operando para dois operadores relacionais (na expressão <code>a &lt b &lt c</code>, o <code>b</code> é comparado tanto com o <code>a</code> como com o <code>c</code>). Para escrever uma expressão como essa em C, seria necessário combinar dois operadores relacionais, usando o <code>&&</code>, da seguinte forma: <code>a &lt b && b &lt c</code>.</p>
+                     </div>
+                 
+                 
+                 
+                 
                    <br>
                    <hr/><hr/>
                    <div class="row" style="padding-left:5%;paddin-right:5%">
                        <div class="alert alert-dark infop" role="alert">
-                         <a href="arrays.html" class="alert-link">Clique aqui</a> para acessar o Capítulo 2: Arrays.
+                         <a href="decisaorepeticao.html" class="alert-link">Clique aqui</a> para acessar o Capítulo 2: Estruturas de Decisão e Repetição.
                        </div>
                    </div>
         </div>
