@@ -1,1 +1,459 @@
-soon
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"> 
+<TITLE>Algoritmos e Estruturas de Dados em C</TITLE>
+<META NAME="Author" CONTENT="Ruan Delgado Gomes">
+<META name="description" content="Apostila de C e Estruturas de Dados.">
+<META NAME="keywords" CONTENT="C, algoritmos, Estruturas de Dados, análise de algoritmos">
+<META name="language" content="Portuguese">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" href="aulas.css" type="text/css">
+<link rel="stylesheet" href="w3.css">
+<LINK rel="stylesheet" media="(max-width:1024px)" href="aulas-mobile.css" type="text/css">
+<LINK rel="stylesheet" media="print" href="aulas-print.css" type="text/css">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+<STYLE TYPE="text/css">
+tt.bad {
+/*color: #d00000;*/
+/*background: #ffe0e0;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: bold;
+  color: #b00000;
+}
+tt.good {
+/*color: #008000;*/
+/*background: #d0ffd0;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-weight: bold;
+  color: #007000;
+}
+</STYLE>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10925343-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</HEAD>
+<BODY>
+
+
+<div class="topnav" id="myTopnav" style="position:static;">
+    <a href="index.html" style="font-size:14px;">Home</a>
+    <a href="apostilaC_ED.html" style="font-size:10px;">Cap. 1 - Introdução à Linguagem C</a>
+    <a href="decisaorepeticao.html" style="font-size:10px;">Cap. 2 - Estruturas de Decisão e Repetição</a>
+    <a href="<i>array</i>s.html" style="font-size:10px;">Cap. 3 - <i>Array</i>s, Ponteiros e Strings</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<div class="w3-row" >
+    <div class="w3-row w3-white w3-container" style="height:100%" id="about">
+        <div class="w3-padding-64 w3-center">
+
+            <h1 class='apostila' style="color:darkblue;text-align:left;font-size:16px;"><strong>Prof. Ruan Delgado Gomes</strong><h1><h1 class='apostila' style="color:darkgreen;text-align:left;font-size:16px;"><em>GComPI - IFPB Campina Grande</em></h1>
+            <br>
+            <h1 class='apostila'><i>Array</i>s, Ponteiros e Strings</h1>
+         
+	            <br>                
+                <h2 class='apostila'>1 - <i>Array</i>s</h2> 
+                <br>
+                
+                	<p class="normal">Existem problemas em que é necessário armazenar e processar um conjunto (possivelmente grande) de valores do mesmo tipo. Por exemplo, considere um programa que leia da entrada 1000 valores reais e depois informe a quantidade de valores acima da média. Para resolver esse problema, é necessário armazenar os 1000 valores, calcular a média aritmética desses 1000 valores, e por fim verificar quantos desses 1000 valores são maiores que a média que foi calculada. Utilizando apenas os conhecimentos que foram discutidos até o momento neste material, nós precisaríamos declarar 1000 variáveis e depois escrever milhares de linhas de código para conseguir ler da entrada os 1000 valores, calcular a média aritmética e verificar quantos valores são maiores que a média. Naturalmente, essa é uma solução que demandaria muito tempo e teria grande probabilidade de apresentar erros. O código a seguir ilustra de maneira compacta como seria essa solução pouco inteligente para o problema.</p>
+                    
+                        <div class='w3-row codec' style="width: 320px; height: 270px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	double v1,v2,v3...v1000;
+	double media;
+	int qtd = 0;
+	scanf("%lf",&v1);
+	scanf("%lf",&v2);
+	... // mais 997 linhas
+	scanf("%lf",&v1000);
+	media = (V1 + V2 + V3 +...+v1000)/1000;
+	if(v1 > media) qtd++;
+	if(v2 > media) qtd++;
+	... // mais 997 linhas
+	if(v1000 > media) qtd++;
+	printf("%d\n",qtd);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                	<p class="normal">Felizmente, as linguagens de programação geralmente oferecem algum mecanismo para declararmos um grande conjunto de variáveis de um mesmo tipo utilizando pouco código. Também é possível manipular esse conjunto de valores utilizando estruturas de repetição, quando o mesmo processamento é realizado em todos os valores do conjunto, como é o caso do exemplo mostrado. Em C existe o conceito de <i>array</i>, que consiste em um conjunto de elementos de um mesmo tipo.</p>
+                     
+                     <div style="padding-left:15%;padding-right:15%">
+                         <p class="alert alert-info infop" role="alert"><strong>Diferença em relação a Python:</strong> em Python não existe o conceito de <i>array</i> no formato encontrado em C. Em Python existe uma estrutura similar denominada <code>list</code>, que também serve para representar um conjunto de valores. No entanto, existem diferenças importantes entre um <i>array</i>, como definido na linguagem C, e uma <code>list</code>, como definida na linguagem Python. Primeiramente, o <i>array</i> é estático, ou seja, a quantidade de elementos é definida no momento da declaração e não pode variar posteriormente (a não ser que sejam usados ponteiros e alocação dinâmica de memória, que são assuntos de futura seções). Outra diferença importante é que um <i>array</i> armazena sempre valores de um mesmo tipo. Mais na frente, em outro capítulo, iremos aprender a implementar em C estruturas de dados similares à <code>list</code> de Python.</p>
+                     </div>
+
+                	<p class="normal">Para declarar um <i>array</i>, precisamos informar o tipo dos elementos que serão armazenados dentro do <i>array</i> e a quantidade de elementos, seguindo a sintaxe mostrada a seguir:</p>
+
+                        <div class='codec' style="width: 330px; height: 20px;border: 3px solid black;">
+                        <code>
+<pre>&lttipo&gt &ltnome_do_<i>array</i>&gt [quantidade_de_elementos];
+
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                	<p class="normal">O código a seguir mostra alguns exemplos de declaração e manipulação de <i>array</i>s.</p>
+                        <div class='w3-row codec' style="width: 460px; height: 200px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+int main() {
+	char nome[50];
+	double notas[4];
+	scanf("%s", nome);
+	scanf("%lf", & notas[0]);
+	scanf("%lf", & notas[1]);
+	scanf("%lf", & notas[2]);
+	scanf("%lf", & notas[3]);
+	double media = (notas[0] + notas[1] + notas[2] + notas[3])/4;
+	printf("A media de %s foi %lf\n", nome, media);
+	return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                	<p class="normal">Neste exemplo de código são declarados dois <i>array</i>s. O primeiro é um <i>array</i> de <code>char</code> com 50 elementos, ou seja, uma string de até 49 caracteres (o último elemento é reservado para um caractere especial que indica o final da string). No Capítulo 1 já foi mostrado como declarar, ler e escrever strings em C. O segundo é um <i>array</i> de valores reais (<code>double</code>), que representa um conjunto de notas. No código do exemplo, quatro notas são lidas da entrada, além do nome do aluno, e é calculada a média aritmética das quatro notas que são armazenadas dentro do <i>array</i>.</p>
+    
+    
+    <h3 class='apostila'>1.1 - Acessando elementos do <i>array</i></h3> 
+    
+    
+                    <p class="normal">Para acessar ou modificar os valores armazenados em um <i>array</i>, deve-se indexa-lo; ou seja, informar qual a posição do elemento dentro do <i>array</i> que se deseja acessar ou modificar. Em C, considerando um <i>array</i> de <code>N</code> elementos, ele pode ser indexado nas posições entre <code>0 e N-1</code>. Por exemplo, o <i>array</i> <code>notas</code>, do código mostrado anteriormente, só pode ser indexado entre 0 e 3, uma vez que ele possui 4 elementos.<p>
+    
+                    <p class="normal"> A indexação fora dos limites causa um erro em tempo de execução (<em>runtime error</em>); ou seja, um erro que só ocorre durante a execução do programa, mas não é identificado em tempo de compilação. Isso pode ser perigoso, pois um mesmo programa pode executar várias vezes sem apresentar erro, mas apresentar erro para um caso de teste específico. Portanto, sempre que realizar a indexação de um <i>array</i> em um trecho de código, analise se existe a possibilidade de haver indexação fora dos limites, especialmente quando o valor do índice for oriundo de algum cálculo realizado anteriormente e que depende de valores fornecidos pela entrada. Nesse caso, deve-se analisar o intervalo de valores permitidos para a entrada e verificar se em algum caso o cálculo resulta em um valor de índice inválido. Nesses casos, deve-se corrigir o código que calcula o índice ou realizar um tratamento para só permitir o acesso ao <i>array</i> quando o índice calculado for válido.</p>
+     
+                     <p class="normal">Voltando ao exemplo do início da seção, se quisermos ler 1000 valores da entrada de um mesmo tipo, podemos declara-los como um <i>array</i> de 1000 elementos. Além disso, podemos usar uma repetição para ler todos os elementos da entrada. Quando usamos a estrutura de repetição <code>for</code>, por exemplo, em geral é usado um contador, que é incrementado em cada repetição, e serve para contar a quantidade de repetições já realizadas e indicar o momento em que o <em>loop</em> deve encerrar (por meio de uma condição). Esse contador pode ser usado para indexar os elementos do <i>array</i> em cada repetição, de modo que para cada iteração do <i>loop</i> um elemento diferente do <i>array</i> é acessado. O código a seguir mostra a implementação do problema de motivação (ou seja, ler 1000 valores reais e informar quantos estão acima da média) utilizando <i>array</i> e repetição para acessar e processar os elementos do <i>array</i>.</p>
+                        <div class='w3-row codec' style="width: 410px; height: 300px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+#define SIZE 1000
+
+int main() {
+    double val[SIZE];
+    double media = 0;
+    int i = 0;
+    for(i = 0; i &lt SIZE; i++) {
+        scanf("%lf", &val[i]);
+        media += val[i];
+    }
+    media = media/SIZE;
+    int qtd = 0;
+    for(i = 0; i &lt SIZE; i++) {
+        if(val[i] &gt media) qtd++;
+    }
+    printf("Quantidade de valores acima da media: %d\n",qtd);
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+     
+                     <p class="normal">No exemplo, a variável <code>i</code>, que é usada para contar a quantidade de repetições, também é usada para indexar o <i>array</i>. Perceba que o <code>i</code> sempre começa com o valor <code>0</code> e possui o valor <code>SIZE-1</code> na última repetição, sendo que <code>SIZE</code> é uma constante que define o tamanho do <i>array</i> (ver segunda linha de código). Dessa forma, em cada iteração do <code>for</code>, um elemento diferente do <i>array</i> é acessado. Utilizando uma constante para definir o tamanho do <em>array</em>, como no exemplo mostrado, é possível modificar esse programa para funcionar com <i>array</i>es de tamanhos diferentes de forma mais rápida, bastando apenas modificar o valor da constante na linha 2. Caso não fosse utilizada essa estratégia, qualquer mudança no tamanho do <em>array</em> iria requerer modificações em todas as linhas que usam o tamanho do <i>array</i> (i.e. linhas 5, 8, 12 e 14).
+     
+     <h3 class='apostila'>1.2 - Acesso a Elementos da Vizinhança em um <i>Array</i></h3> 
+     
+                     <p class="normal">Em alguns problemas, é necessário realizar um tratamento diferenciado para os elementos que se localizam nas extremidades do <i>array</i>. Isso ocorre quando é necessário acessar elementos da vizinhança (anteriores ou posteriores) de cada elemento do <i>array</i> para realizar algum processamento. O problema é que o primeiro elemento não possui elemento anterior e o último elemento não possui elemento posterior. Portanto, usualmente a solução desses problemas pode levar a um acesso ilegal ao <i>array</i> à medida em que se processa os elementos próximos das extremidades.</p>
+     
+                     <p class="normal">Considere o seguinte problema como exemplo: faça um programa que leia da entrada 10 valores inteiros e armazene-os em um <i>array</i>. Posteriormente, verifique quantos elementos do <i>array</i> possuem valor menor que o seu sucessor no <i>array</i>. Por exemplo, para a entrada a seguir:</p>
+    
+                        <div class='codec' style="width: 130px; height: 10px;border: 3px solid black;">
+                        <code>
+<pre>2 3 5 4 6 7 6 3 7 1
+
+</pre>
+                        </code>
+                        </div>   
+        <br>
+                    
+                      <p class="normal">Seria fornecida a saída:</p>
+     
+                        <div class='codec' style="width: 220px; height: 10px;border: 3px solid black;">
+                        <code>
+<pre>5 valores menores que o sucessor
+
+</pre>
+                        </code>
+                        </div>   
+        <br>
+                     
+     
+                       <p class="normal">Perceba que, de fato, apenas 5 valores são menores que seus sucessores, no caso de teste fornecido (i.e. 2, 3, 4, 6 e 3). A solução para esse problema é mostrada no código a seguir:</p>
+                        <div class='w3-row codec' style="width: 380px; height: 280px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+#define SIZE 10
+
+int main() {
+    int vet[SIZE];
+    int i;
+    for(i = 0; i &lt SIZE; i++) {
+        scanf("%d",&vet[i]);
+    } 
+    int qtd = 0;
+    for(i = 0; i &lt SIZE; i++) {
+        if(i &lt SIZE-1) {
+            if(vet[i] &lt vet[i+1]) qtd++;
+        }
+    }
+    printf("%d valores menores que o sucessor\n", qtd);
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+
+                    <p class="normal"> Note que dentro do <code>for</code> que verifica se os elementos do <i>array</i> são menores que os seus sucessores, a verificação só ocorre quando <code>i &lt SIZE-1</code>. Isso impede de executar o código que compara um elemento com seu sucessor (<code>vet[i] &lt vet[i+1]</code>) quando o <code>i</code> é igual a <code>SIZE-1</code>; ou seja, quando se está acessando o último elemento do <i>array</i>. Se essa comparação fosse executada para esse caso, ao indexar com o array com <code>i+1</code>, seria realizado um acesso fora dos limites do <i>array</i>, o que poderia causar um erro em tempo de execução.</p>
+     
+                    <p class="normal"> Agora considere outro problema de exemplo: faça um programa que leia da entrada 10 valores inteiros e armazene-os em um <i>array</i>. Posteriormente, verifique quantos elementos do <i>array</i> possuem valor <strong>menor que a soma dos dois elementos posteriores</strong>. Para esse problema, deve-se considerar que o conjunto de valores possui uma <strong>organização circular</strong>; ou seja, o elemento posterior do último elemento do <i>array</i> é o primeiro elemento do <i>array</i>. Por exemplo, considerando um <i>array</i> de 10 elementos, os dois elementos posteriores ao elemento da posição 8 são os elementos das posições 9 e 0, e os dois elementos posteriores ao elemento da posição 9 (última posição do <i>array</i>) são os elementos das posições 0 e 1 (primeiro e segundo elementos do <i>array</i>).</p>
+                     
+     
+                     <p class="normal">Para a entrada a seguir:</p>
+     
+                        <div class='codec' style="width: 130px; height: 10px;border: 3px solid black;">
+                        <code>
+<pre>2 3 5 4 1 0 6 4 7 1
+
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+     
+                          <p class="normal">Seria fornecida a saída:</p>
+
+                        <div class='codec' style="width: 340px; height: 10px;border: 3px solid black;">
+                        <code>
+<pre>7 elementos menores que a soma dos dois sucessores
+
+</pre>
+                        </code>
+                        </div>   
+        <br>
+          
+                          <p class="normal">Como exercício, avalie o caso de teste de entrada e verifique quais são os 7 valores que são menores que a soma dos seus dois sucessores, para garantir que o problema foi bem compreendido. A solução para esse problema é mostrada no código a seguir:</p>
+                       
+                        <div class='w3-row codec' style="width: 480px; height: 380px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+#define SIZE 10
+
+int main() {
+    int vet[SIZE];
+    int i;
+    for(i = 0; i &lt SIZE; i++) {
+        scanf("%d",&vet[i]);
+    }
+    int qtd = 0;
+    for(i = 0; i &lt SIZE; i++) {
+        if(i == SIZE-2) { //penultimo elemento
+            if(vet[i] &lt (vet[i+1] + vet[0])) qtd++;
+        }
+        else if(i == SIZE-1) { //ultimo elemento
+            if(vet[i] &lt (vet[0] + vet[1])) qtd++;
+        }
+        else { //caso geral
+            if(vet[i] &lt (vet[i+1] + vet[i+2])) qtd++;
+        }
+    }
+    printf("%d elementos menores que a soma dos dois sucessores\n",qtd);
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+          
+                          <p class="normal">Note que nesse caso foi necessário tratar de forma individual dois casos especiais, o caso de acesso ao penúltimo elemento e o caso de acesso ao último elemento do <i>array</i>. Todos os outros elementos entram no caso geral. Uma solução mais elegante para esse problema é mostrada a seguir, usando o operador módulo (resto de divisão). Fica como exercício para o aluno a simulação desse código para verificar como ele funciona.</p>
+                        <div class='w3-row codec' style="width: 480px; height: 300px;">
+                        <code>
+<pre>#include &ltstdio.h&gt
+#define SIZE 10
+
+int main() {
+    int vet[SIZE];
+    int i;
+    for(i = 0; i &lt SIZE; i++) {
+        scanf("%d",&vet[i]);
+    }
+    
+    int qtd = 0;
+    for(i = 0; i &lt SIZE; i++) {
+        int i1 = (i+1)%SIZE;
+        int i2 = (i+2)%SIZE;
+        if(vet[i] &lt (vet[i1] + vet[i2])) qtd++;
+    }
+    printf("%d elementos menores que a soma dos dois sucessores\n",qtd);
+    return 0;
+}
+</pre>
+                        </code>
+                        </div>
+                    <br>
+          
+          
+          <h3 class="apostila" style="color:darkblue">Exercícios no URI</h3>
+
+            <p class="normal">Resolver os seguintes problemas no URI, usando a linguagem de programação C:</p>
+            <ul>
+           	<li> 1245 -- Botas Perdidas -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1245" target="_blank">link</a></li>
+           	<li> 1533 -- Detetive Watson -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1533" target="_blank">link</a></li>
+           	<li> 1171 -- Frequência de Números -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1171" target="_blank">link</a></li>
+           	<li> 1089 -- Loop Musical -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1089" target="_blank">link</a></li>
+           	<li> 2248 -- Estágio -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/2248" target="_blank">link</a></li>
+           	<li> 1225 -- Coral Perfeito -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1225" target="_blank">link</a></li>
+           	<li> 1107 -- Escultura à Laser -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1107" target="_blank">link</a></li>
+           	<li> 1125 -- Fórmula 1 -- <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1125" target="_blank">link</a></li>
+           </ul>
+
+         
+	            <br>                
+                <h2 class='apostila'>2 - Ponteiros</h2> 
+                <br>
+            
+                <p class="normal">Toda variável declarada dentro de um código representa um local de memória alocado para armazenar valores de um determinado tipo. A memória é dividida em posições de memória que podem ser alocadas e cada posição de memória possui um endereço. Quando se declara uma variável, o seu identificador abstrai o seu endereço, de modo que o programador pode salvar valores e ler valores de um determinado local de memória a partir do seu identificador.  A Figura 1 representa de maneira conceitual a memória principal de um computador. (obs: alguns detalhes são omitidos ou simplificados nessa representação, como o tamanho dos blocos de memória, alinhamento etc. No entanto, é suficiente para entender o conceito de ponteiro a ser apresntado).</p>
+       
+                <br>
+                <figure>
+                  <img src="figuras/memoriaconceitual.png" alt="Minha Figura" style="width: 25%;">	
+                  <figcaption>Figura 1. Representação conceitual da memória principal do computador. </figcaption>
+                </figure>
+                <br>
+                
+                <p class="normal">As variáveis com identificadores <code>A</code>, <code>B</code>, <code>C</code> e <code>D</code> são do tipo <code>int</code>. Perceba que cada variável possui um endereço correspondente, listado na parte de baixo (os endereços de memória usualmente são representados em hexadecimal). Por exemplo, o endereço da variável <code>A</code> é <code>0x01</code> e o endereço da variável <code>D</code> é <code>0x07</code>. </p>
+
+                	<p class="normal">Em C, assim como em outras linguagens de programação, existe um tipo especial de dados, denominado ponteiro, que pode armazenar o endereço de posições de memória; ou seja, o endereço físico de outras variáveis. Para declarar um ponteiro de um determinado tipo, usa-se a seguinte sintaxe:</p>
+    
+                        <div class='codec' style="width: 270px; height: 10px;border: 3px solid black;">
+                        <code>
+<pre>&lttipo&gt  *&ltidentificador_do_ponteiro&gt ;
+</pre>
+                        </code>
+                        </div>   
+        <br>
+
+                <p class="normal">Deve-se definir o tipo da variável que o ponteiro é capaz de referenciar e usa-se <code>*</code> seguido do identificador do ponteiro. Por exemplo, considere a declaração a seguir:</p>
+
+                        <div class='codec' style="width: 70px; height: 10px;border: 3px solid black;">
+                        <code>
+<pre>float *pR;
+</pre>
+                        </code>
+                        </div>   
+        <br>
+               <p class="normal"> Nesse caso, um ponteiro denominado <code>pR</code> é declarado e <code>pR</code> é capaz de armazenar o endereço e referenciar variáveis do tipo <code>float</code>.</p>
+
+                	<p class="normal">No trecho de código a seguir são exemplificadas a declaração e a utilização de ponteiros. No exemplo, são declaradas quatro variáveis do tipo int (<code>A</code>, <code>B</code>, <code>C</code> e <code>D</code>) e três ponteiros para int (<code>pA</code>, <code>pB</code>, <code>pC</code>).</p>
+                        <div class='w3-row codec' style="width: 470px; height: 350px;">
+                        <code>
+<pre>#include&ltstdio.h&gt
+
+int main() {
+    int A, B, C, D;
+    int *pA, *pB, *pC;  //int * declara um ponteiro para int
+   
+    A = 30;
+    B = 25;
+    C = 5;
+    D = 15;
+    
+    pA = &A; //&A retorna o endereço de A
+    pB = &B;
+    pC = &C;
+    
+    //* é usado pra acessar a variável apontada por um ponteiro
+    printf("Soma de A + B: %d\n", (A+B));
+    printf("Soma de A + B: %d\n", (*pA+B));
+    printf("Soma de A + B: %d\n", (*pA+*pB));
+
+    return 0;
+}               
+</pre>
+                        </code>
+                        </div>
+                    <br>
+                
+              
+
+                	<p class="normal">As variáveis <code>pA</code>, <code>pB</code> e <code>pC</code> armazenam posições de memória utilizadas para armazenar valores inteiros (do tipo <code>int</code>). É importante notar que ao serem declarados, os ponteiros não apontam necessariamente para um endereço de memória válido. Em C existe uma constante, denominada <code>NULL</code>, que indica que um ponteiro está nulo, ou seja, não aponta para qualquer posição de memória.</p>
+
+                	<p class="normal">Perceba que o código apresentado no exemplo corresponde exatamente à situação de memória representada pela Figura 1. Foram atribuídos os valores <code>30, 25, 5 e 15</code> às variáveis <code>A</code>, <code>B</code>, <code>C</code> e <code>D</code> , respectivamente.  Após isso, temos o comando <code>pA = &A</code>. O operador <code>&</code> retorna o endereço de memória de uma variável. Dessa forma, esse comando atribui ao ponteiro <code>pA</code> o endereço de memória da variável <code>A</code>. Como podemos ver na figura, o endereço da variável <code>A</code> é igual a <code>0x01</code>; ou seja, após esse comando <code>pA</code> passa a armazenar o valor <code>10</code>. Nos comandos seguintes <code>pB</code> passa a armazenar o endereço da variável <code>B</code> (igual a <code>0x02</code>) e <code>pC</code> passa a armazenar o endereço da variável <code>C</code> (igual a <code>0x03</code>). Esses endereços colocados na figura são apenas um exemplo. Na prática não se sabe de antemão qual será o local da memória onde uma variável vai ser alocada. No entanto, em geral não é necessário saber o valor do endereço de memória de uma variável, uma vez que é possível obter esse valor por meio do operador <code>&</code>.</p> 
+
+                	<p class="normal">Também é possível acessar o valor que está armazenado no local de memória apontado por um ponteiro. Por exemplo, como <code>pA</code> aponta para o endereço de memória de <code>A</code>, podemos utilizar um operador para acessar o valor armazenado em <code>A</code> a partir de <code>pA</code>. Para acessar o valor armazenado no local apontado por um ponteiro, utilizamos o operador <code>*</code> (chamado de operador de desreferência), antes do identificador do ponteiro. Por exemplo, <code>*pA</code> retorna o valor armazenado pela variável <code>A</code>, uma vez que <code>pA</code> contém o endereço de <code>A</code>; ou seja, <code>*pA</code> vai retornar o valor 30 no nosso exemplo. Dessa forma, perceba que em nosso exemplo as três saídas do final são equivalentes, de modo que a saída desse programa será:</p>
+
+                        <div class='codec' style="width: 120px; height: 40px;border: 3px solid black;">
+                        <code>
+<pre>Soma de A + B: 55
+Soma de A + B: 55
+Soma de A + B: 55
+</pre>
+                        </code>
+                        </div>   
+        <br>
+                	<p class="normal">Nessa seção foi apresentado apenas o conceito de ponteiro e a sintaxe básica para declaração e operação com ponteiros. Mais na frente a utilidade dos ponteiros será melhor esclarecida, mais especificamente para alocação dinâmica de memória, passagem de parâmetros de funções por referência e para a implementação de estruturas de dados dinâmicas.</p>
+                    
+         
+    	    
+                    <br>                
+                    <h2 class='apostila'>3 - Strings</h2> 
+                    <br>
+                    
+                     soon
+                    
+
+                 	
+                
+              
+                 
+                 <br>
+                 <hr/><hr/>
+                 <div class="row" style="padding-left:5%;paddin-right:5%">
+                     <div class="alert alert-dark infop" role="alert">
+                       <a href="decisaorepeticao.html" class="alert-link">Clique aqui</a> para voltar ao Capítulo 2: Estruturas de Decisão e Repetição.
+                     </div>
+               <!--  </div>
+                   <div class="row" style="padding-left:5%;paddin-right:5%">
+                       <div class="alert alert-dark infop" role="alert">
+                         <a href="<i>array</i>s.html" class="alert-link">Clique aqui</a> para acessar o Capítulo 4: <i>Array</i>s, Ponteiros e Strings.
+                       </div>
+                   </div>
+                -->
+        </div>
+        
+    </div>
+
+</BODY>
+</HTML>
+	
